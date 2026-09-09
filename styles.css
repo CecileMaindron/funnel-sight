@@ -221,8 +221,26 @@ footer .wrap { display: flex; justify-content: space-between; align-items: cente
 .form-card .btn-primary { width: 100%; margin-top: 6px; }
 .form-note { margin-top: 14px; font-size: 12px; color: #9CA0B0; }
 
-@media (max-width: 860px) {
+.demo-banner {
+  background: var(--ink);
+  color: #C9CCDA;
+  font-size: 13px;
+  text-align: center;
+  padding: 10px 16px;
+}
+.demo-banner strong { color: var(--white); }
+
+.field input:disabled {
+  background: #F1F2F5;
+  color: #9CA0B0;
+  cursor: not-allowed;
+}
+.btn-primary:disabled {
+  background: #B9BDCC;
+  cursor: not-allowed;
+}
   .hero, .trial-layout, .audience-grid, .values { grid-template-columns: 1fr; }
   .hero h1, .trial-hero h1 { font-size: 34px; max-width: none; }
   .nav-links { display: none; }
 }
+
