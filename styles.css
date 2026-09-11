@@ -65,7 +65,7 @@ h1, h2, h3 {
 .hero {
   padding: 96px 0 80px;
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
+  grid-template-columns: 1fr 1fr;
   gap: 56px;
   align-items: center;
 }
