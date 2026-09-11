@@ -111,7 +111,13 @@ h1, h2, h3 {
   grid-template-columns: repeat(3, 1fr);
   gap: 40px;
 }
-.value h3 { font-size: 19px; margin-bottom: 10px; }
+.value h2 { font-size: 19px; margin-bottom: 10px; }
+
+/* Breadcrumb */
+.breadcrumb { padding: 24px 0 0; font-size: 13px; color: #7B8094; }
+.breadcrumb a { color: #7B8094; text-decoration: none; }
+.breadcrumb a:hover { text-decoration: underline; }
+.breadcrumb .current { color: var(--ink); }
 .value p { font-size: 15px; color: #454A5B; }
 .value .mark {
   width: 34px; height: 34px;
