@@ -33,6 +33,9 @@
   .faq-item summary::after { content: '+'; float: right; color: var(--indigo); }
   .faq-item[open] summary::after { content: '\2212'; }
   .faq-item p { margin-top: 12px; font-size: 15px; color: #454A5B; }
+
+  /* Cap the hero diagram's size so it doesn't scale up on wide screens. */
+  .loop-motif { max-width: 340px; height: auto; display: block; margin: 0 auto; }
 </style>
 <script type="application/ld+json">
 {
@@ -135,7 +138,7 @@
     </div>
   </div>
   <div>
-    <svg class="loop-motif" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram showing product analytics, CRM reports and a spreadsheet converging into one Funnelsight view">
+    <svg class="loop-motif" viewBox="0 0 400 260" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram showing product analytics, CRM reports and a spreadsheet converging into one Funnelsight view">
       <defs>
         <marker id="fsArrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
           <path d="M0,0 L10,5 L0,10 z" fill="#14161F"/>
@@ -151,23 +154,23 @@
       <rect x="275" y="20" width="110" height="40" rx="4" fill="none" stroke="#DDE0E8" stroke-width="1.5"/>
       <text x="330" y="44" text-anchor="middle" font-family="Inter" font-size="10" fill="#14161F">Spreadsheet</text>
 
-      <path d="M70,60 C70,95 200,95 200,120" stroke="#DDE0E8" stroke-width="1.5" fill="none"/>
-      <path d="M200,60 L200,120" stroke="#DDE0E8" stroke-width="1.5" fill="none"/>
-      <path d="M330,60 C330,95 200,95 200,120" stroke="#DDE0E8" stroke-width="1.5" fill="none"/>
-      <circle cx="200" cy="120" r="4" fill="#14161F"/>
-      <path d="M200,124 L200,146" stroke="#14161F" stroke-width="1.5" fill="none" marker-end="url(#fsArrow)"/>
+      <path d="M70,60 C70,88 200,88 200,108" stroke="#DDE0E8" stroke-width="1.5" fill="none"/>
+      <path d="M200,60 L200,108" stroke="#DDE0E8" stroke-width="1.5" fill="none"/>
+      <path d="M330,60 C330,88 200,88 200,108" stroke="#DDE0E8" stroke-width="1.5" fill="none"/>
+      <circle cx="200" cy="110" r="4" fill="#14161F"/>
+      <path d="M200,114 L200,132" stroke="#14161F" stroke-width="1.5" fill="none" marker-end="url(#fsArrow)"/>
 
-      <rect x="20" y="160" width="360" height="120" rx="6" fill="#FAFBFC" stroke="#14161F" stroke-width="1.5"/>
-      <text x="200" y="195" text-anchor="middle" font-family="Space Grotesk" font-size="20" font-weight="600" fill="#14161F">Funnelsight</text>
+      <rect x="20" y="142" width="360" height="104" rx="6" fill="#FAFBFC" stroke="#14161F" stroke-width="1.5"/>
+      <text x="200" y="172" text-anchor="middle" font-family="Space Grotesk" font-size="20" font-weight="600" fill="#14161F">Funnelsight</text>
 
-      <rect x="35" y="220" width="100" height="32" rx="16" fill="#372F72"/>
-      <text x="85" y="241" text-anchor="middle" font-family="Inter" font-size="12" font-weight="600" fill="#FFFFFF">Activate</text>
+      <rect x="35" y="196" width="100" height="28" rx="14" fill="#372F72"/>
+      <text x="85" y="215" text-anchor="middle" font-family="Inter" font-size="12" font-weight="600" fill="#FFFFFF">Activate</text>
 
-      <rect x="150" y="220" width="100" height="32" rx="16" fill="#D9A441"/>
-      <text x="200" y="241" text-anchor="middle" font-family="Inter" font-size="12" font-weight="600" fill="#14161F">Retain</text>
+      <rect x="150" y="196" width="100" height="28" rx="14" fill="#D9A441"/>
+      <text x="200" y="215" text-anchor="middle" font-family="Inter" font-size="12" font-weight="600" fill="#14161F">Retain</text>
 
-      <rect x="265" y="220" width="100" height="32" rx="16" fill="#14161F"/>
-      <text x="315" y="241" text-anchor="middle" font-family="Inter" font-size="12" font-weight="600" fill="#FFFFFF">Expand</text>
+      <rect x="265" y="196" width="100" height="28" rx="14" fill="#14161F"/>
+      <text x="315" y="215" text-anchor="middle" font-family="Inter" font-size="12" font-weight="600" fill="#FFFFFF">Expand</text>
     </svg>
   </div>
 </header>
