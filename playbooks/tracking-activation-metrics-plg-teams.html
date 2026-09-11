@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tracking Activation Metrics for PLG Teams: Funnelsight</title>
+<title>Tracking activation metrics for PLG teams: Funnelsight</title>
 <meta name="description" content="How PLG teams define, track, and act on activation metrics without stitching together three different tools, and without a dedicated data team to set it up.">
 <link rel="stylesheet" href="/styles.css">
 </head>
@@ -36,6 +36,15 @@
 
   <h2>When activation lives in three different tools</h2>
   <p>A product manager tracks feature adoption in the analytics tool. A growth marketer builds cohort views in a spreadsheet pulled from raw exports. Sales looks at login frequency as a rough proxy for interest. None of these numbers agree with each other, and nobody wants to be the one to point that out in the weekly meeting. So activation gets defined once, in a slide, and then never revisited, even as the product keeps changing underneath it.</p>
+
+  <blockquote>
+    <strong>Common mistake:</strong> reacting to three disagreeing numbers by adding a fourth dashboard to reconcile them. <a href="https://productled.com/book/playbook/chapter-7-actionable-data" target="_blank" rel="noopener">Wes Bush's ProductLed Playbook</a> calls this one of the easiest traps to fall into: tracking more instead of assigning one owned definition that every team actually uses.
+  </blockquote>
+
+  <h2>The math behind activation rate</h2>
+  <p>Once a team agrees on a single activation event, the calculation is straightforward:</p>
+  <p><strong>Activation rate (%) = (number of users who completed the activation event ÷ total new signups) × 100</strong></p>
+  <p>The formula isn't the hard part. Getting three tools to agree on the numerator is. That's the actual problem Funnelsight solves, not the arithmetic.</p>
 
   <h2>How Funnelsight connects activation to the rest of the funnel</h2>
   <p>Funnelsight lets you define an activation event directly from product usage data, the same event tracking described on the <a href="/#product">product overview</a>, and follow it through to trial conversion and revenue without exporting anything to a spreadsheet. You set the event once (a teammate invited, a first report generated, whatever actually signals use for your product), and every dashboard downstream uses that same definition. No data team required to wire it up.</p>
