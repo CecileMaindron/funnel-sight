@@ -240,6 +240,19 @@ footer .wrap { display: flex; justify-content: space-between; align-items: cente
   cursor: not-allowed;
 }
 
+/* Article pages (SEO content) */
+.article { padding: 96px 0 64px; max-width: 720px; }
+.article h1 { font-size: 40px; margin-bottom: 20px; }
+.article .lede-intro { font-size: 18px; color: #454A5B; margin-bottom: 40px; }
+.article h2 { font-size: 26px; margin: 40px 0 16px; }
+.article p { font-size: 16px; color: #2A2D3B; margin-bottom: 16px; }
+.article a { color: var(--indigo); text-decoration: underline; }
+.article-cta {
+  margin: 48px 0; padding: 32px;
+  background: var(--white); border: 1px solid var(--line); border-radius: 8px;
+}
+.article-faq { margin-top: 48px; border-top: 1px solid var(--line); padding-top: 32px; }
+
 @media (max-width: 860px) {
   .hero, .trial-layout, .audience-grid, .values { grid-template-columns: 1fr; }
   .hero h1, .trial-hero h1 { font-size: 34px; max-width: none; }
