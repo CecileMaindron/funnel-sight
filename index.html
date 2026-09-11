@@ -7,6 +7,105 @@
 <meta name="description" content="Funnelsight helps B2B growth and PLG teams see activation, retention and expansion in one place, without a data team.">
 <meta name="google-site-verification" content="pwkpGD-lUkAX3U0JXVnwZ89rr338QaC_RcUiQQgpm48" />
 <link rel="stylesheet" href="styles.css">
+<style>
+  /* Added for the new problem statement above the product section.
+     Move into styles.css whenever convenient — kept here so this file stays self-contained. */
+  .section-lede {
+    max-width: 62ch;
+    margin: 0 auto 24px;
+    font-size: 18px;
+    color: #454A5B;
+  }
+
+  /* Added for the FAQ section. Move into styles.css whenever convenient. */
+  .faq-section { padding: 64px 0; border-top: 1px solid var(--line); }
+  .faq-section h2 { font-size: 30px; max-width: 20ch; margin-bottom: 24px; }
+  .faq-list { max-width: 720px; }
+  .faq-item { border-bottom: 1px solid var(--line); padding: 18px 0; }
+  .faq-item summary {
+    cursor: pointer;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    list-style: none;
+  }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary::after { content: '+'; float: right; color: var(--indigo); }
+  .faq-item[open] summary::after { content: '\2212'; }
+  .faq-item p { margin-top: 12px; font-size: 15px; color: #454A5B; }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What does Funnelsight actually do?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "One dashboard for activation, retention and expansion, so marketing and revenue work from the same numbers instead of separate exports."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need a data team to set it up?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Connect your product analytics tool and your CRM, and Funnelsight builds a working dashboard the same day."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What data sources can I connect?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Product analytics, your CRM, and marketing sources like Google Ads. No analytics tool in place yet? Import a spreadsheet to try Funnelsight, then connect a live source later."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is this different from just exporting to a spreadsheet?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A spreadsheet you rebuild every week answers the question once and needs redoing next week. Once a live source is connected, Funnelsight keeps the same view current automatically."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can other people on my team use it too?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Invite teammates from marketing and revenue, share a view for review, or export it for your quarterly business review, no rebuilding required."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is my data secure?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Your data stays in your workspace, nothing is shared beyond your account, and you can disconnect a source anytime."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where is my data stored?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In the EU. Funnelsight is based in Nantes, France, and data is hosted accordingly."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need a credit card to start the trial?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. The trial runs 14 days, ends automatically, and there's nothing to cancel."
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -36,20 +135,46 @@
     </div>
   </div>
   <div>
-    <svg class="loop-motif" viewBox="0 0 400 360" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram of a growth loop with three connected stages">
-      <circle cx="200" cy="180" r="150" stroke="#DDE0E8" stroke-width="1.5"/>
-      <path d="M200 30 A150 150 0 0 1 330 255" stroke="#372F72" stroke-width="3" fill="none" stroke-linecap="round"/>
-      <path d="M330 255 A150 150 0 0 1 70 255" stroke="#14161F" stroke-width="3" fill="none" stroke-linecap="round"/>
-      <path d="M70 255 A150 150 0 0 1 200 30" stroke="#D9A441" stroke-width="3" fill="none" stroke-linecap="round"/>
-      <circle cx="200" cy="30" r="9" fill="#372F72"/>
-      <circle cx="330" cy="255" r="9" fill="#14161F"/>
-      <circle cx="70" cy="255" r="9" fill="#D9A441"/>
-      <text x="200" y="14" text-anchor="middle" font-family="Inter" font-size="13" fill="#14161F">Activate</text>
-      <text x="352" y="270" text-anchor="start" font-family="Inter" font-size="13" fill="#14161F">Expand</text>
-      <text x="48" y="270" text-anchor="end" font-family="Inter" font-size="13" fill="#14161F">Retain</text>
+    <svg class="loop-motif" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram showing product analytics, CRM reports and a spreadsheet converging into one Funnelsight view">
+      <defs>
+        <marker id="fsArrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+          <path d="M0,0 L10,5 L0,10 z" fill="#14161F"/>
+        </marker>
+      </defs>
+
+      <rect x="15" y="20" width="110" height="40" rx="4" fill="none" stroke="#DDE0E8" stroke-width="1.5"/>
+      <text x="70" y="44" text-anchor="middle" font-family="Inter" font-size="10" fill="#14161F">Product analytics</text>
+
+      <rect x="145" y="20" width="110" height="40" rx="4" fill="none" stroke="#DDE0E8" stroke-width="1.5"/>
+      <text x="200" y="44" text-anchor="middle" font-family="Inter" font-size="10" fill="#14161F">CRM reports</text>
+
+      <rect x="275" y="20" width="110" height="40" rx="4" fill="none" stroke="#DDE0E8" stroke-width="1.5"/>
+      <text x="330" y="44" text-anchor="middle" font-family="Inter" font-size="10" fill="#14161F">Spreadsheet</text>
+
+      <path d="M70,60 C70,95 200,95 200,120" stroke="#DDE0E8" stroke-width="1.5" fill="none"/>
+      <path d="M200,60 L200,120" stroke="#DDE0E8" stroke-width="1.5" fill="none"/>
+      <path d="M330,60 C330,95 200,95 200,120" stroke="#DDE0E8" stroke-width="1.5" fill="none"/>
+      <circle cx="200" cy="120" r="4" fill="#14161F"/>
+      <path d="M200,124 L200,146" stroke="#14161F" stroke-width="1.5" fill="none" marker-end="url(#fsArrow)"/>
+
+      <rect x="20" y="160" width="360" height="120" rx="6" fill="#FAFBFC" stroke="#14161F" stroke-width="1.5"/>
+      <text x="200" y="195" text-anchor="middle" font-family="Space Grotesk" font-size="20" font-weight="600" fill="#14161F">Funnelsight</text>
+
+      <rect x="35" y="220" width="100" height="32" rx="16" fill="#372F72"/>
+      <text x="85" y="241" text-anchor="middle" font-family="Inter" font-size="12" font-weight="600" fill="#FFFFFF">Activate</text>
+
+      <rect x="150" y="220" width="100" height="32" rx="16" fill="#D9A441"/>
+      <text x="200" y="241" text-anchor="middle" font-family="Inter" font-size="12" font-weight="600" fill="#14161F">Retain</text>
+
+      <rect x="265" y="220" width="100" height="32" rx="16" fill="#14161F"/>
+      <text x="315" y="241" text-anchor="middle" font-family="Inter" font-size="12" font-weight="600" fill="#FFFFFF">Expand</text>
     </svg>
   </div>
 </header>
+
+<div class="wrap">
+  <p class="section-lede">Right now, that view lives in three places: a product analytics tool nobody outside the team opens, a CRM report built for pipeline, and a spreadsheet someone rebuilds every Monday. By the time marketing and revenue agree on what "activated" means, the quarter is half over.</p>
+</div>
 
 <section class="values wrap" id="product">
   <div class="value">
@@ -91,6 +216,44 @@
   <p>Start a free trial and connect your first data source in a few minutes. No credit card required.</p>
   <div class="hero-actions">
     <a href="trial.html" class="btn-primary accent">Start free trial</a>
+  </div>
+</section>
+
+<section class="faq-section wrap" id="faq">
+  <h2>Questions worth asking before you start.</h2>
+  <div class="faq-list">
+    <details class="faq-item">
+      <summary>What does Funnelsight actually do?</summary>
+      <p>One dashboard for activation, retention and expansion, so marketing and revenue work from the same numbers instead of separate exports.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Do I need a data team to set it up?</summary>
+      <p>No. Connect your product analytics tool and your CRM, and Funnelsight builds a working dashboard the same day.</p>
+    </details>
+    <details class="faq-item">
+      <summary>What data sources can I connect?</summary>
+      <p>Product analytics, your CRM, and marketing sources like Google Ads. No analytics tool in place yet? Import a spreadsheet to try Funnelsight, then connect a live source later.</p>
+    </details>
+    <details class="faq-item">
+      <summary>How is this different from just exporting to a spreadsheet?</summary>
+      <p>A spreadsheet you rebuild every week answers the question once and needs redoing next week. Once a live source is connected, Funnelsight keeps the same view current automatically.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Can other people on my team use it too?</summary>
+      <p>Yes. Invite teammates from marketing and revenue, share a view for review, or export it for your quarterly business review, no rebuilding required.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Is my data secure?</summary>
+      <p>Yes. Your data stays in your workspace, nothing is shared beyond your account, and you can disconnect a source anytime.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Where is my data stored?</summary>
+      <p>In the EU. Funnelsight is based in Nantes, France, and data is hosted accordingly.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Do I need a credit card to start the trial?</summary>
+      <p>No. The trial runs 14 days, ends automatically, and there's nothing to cancel.</p>
+    </details>
   </div>
 </section>
 
