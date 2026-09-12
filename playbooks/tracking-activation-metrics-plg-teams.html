@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tracking activation metrics for PLG teams: Funnelsight</title>
-<meta name="description" content="How PLG teams define, track, and act on activation metrics without stitching together three different tools, and without a dedicated data team to set it up.">
+<title>Spreadsheets vs analytics tools for PLG teams: Funnelsight</title>
+<meta name="description" content="Spreadsheets work for PLG tracking at first. See where they break down, and what a dedicated analytics tool changes for marketing and revenue teams.">
 <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
@@ -29,48 +29,41 @@
 </div>
 
 <nav class="breadcrumb wrap" aria-label="Breadcrumb">
-  <a href="/">Home</a> / <a href="/resources.html">Resources</a> / <span class="current">Tracking activation metrics for PLG teams</span>
+  <a href="/">Home</a> / <a href="/resources.html">Resources</a> / <span class="current">Spreadsheets vs a dedicated analytics tool for PLG tracking</span>
 </nav>
 
 <article class="article wrap">
-  <h1>Tracking activation metrics for PLG teams</h1>
-  <p class="lede-intro">PLG teams collect plenty of signup data, but activation, the moment a user actually gets value, is harder to pin down. It gets defined one way in the product team's dashboard and another way in growth's spreadsheet, and by the time everyone agrees on what counts, the metric is already out of date.</p>
+  <h1>Spreadsheets vs a dedicated analytics tool for PLG tracking</h1>
+  <p class="lede-intro">A spreadsheet is usually the first place PLG funnel tracking lives. It's the right call for a while, and then it isn't. Here's where that switch usually happens, and what changes on the other side of it.</p>
 
-  <h2>When activation lives in three different tools</h2>
-  <p>A product manager tracks feature adoption in the analytics tool. A growth marketer builds cohort views in a spreadsheet pulled from raw exports. Sales looks at login frequency as a rough proxy for interest. None of these numbers agree with each other, and nobody wants to be the one to point that out in the weekly meeting. So activation gets defined once, in a slide, and then never revisited, even as the product keeps changing underneath it.</p>
+  <h2>Where spreadsheets start to break</h2>
+  <p>A spreadsheet is often the first tool a growth team reaches for. It's free, everyone already knows how to use it, and for a handful of signups it works fine. Then the account list grows. The event log gets exported from three separate places, and every dashboard update means someone rebuilds a pivot table by hand.</p>
+  <p>Formulas break when a column moves. Definitions drift, too: one person's "activated user" is not quite the next person's. By the time a report reaches the leadership team, the numbers behind it have usually gone stale.</p>
 
-  <blockquote>
-    <strong>Common mistake:</strong> reacting to three disagreeing numbers by adding a fourth dashboard to reconcile them. <a href="https://productled.com/book/playbook/chapter-7-actionable-data" target="_blank" rel="noopener">Wes Bush's ProductLed Playbook</a> calls this one of the easiest traps to fall into: tracking more instead of assigning one owned definition that every team actually uses.
-  </blockquote>
-
-  <h2>The math behind activation rate</h2>
-  <p>Once a team agrees on a single activation event, the calculation is straightforward:</p>
-  <p><strong>Activation rate (%) = (number of users who completed the activation event ÷ total new signups) × 100</strong></p>
-  <p>The formula isn't the hard part. Getting three tools to agree on the numerator is. That's the actual problem Funnelsight solves, not the arithmetic.</p>
-
-  <h2>How Funnelsight connects activation to the rest of the funnel</h2>
-  <p>Funnelsight lets you define an activation event directly from product usage data, the same event tracking described on the <a href="/#product">product overview</a>, and follow it through to trial conversion and revenue without exporting anything to a spreadsheet. You set the event once (a teammate invited, a first report generated, whatever actually signals use for your product), and every dashboard downstream uses that same definition. No data team required to wire it up.</p>
+  <h2>What changes with a dedicated tool</h2>
+  <p>Funnelsight pulls product usage and CRM data into one funnel view, so the definition of activation is set once and applied the same way across every report. If you're still deciding what that definition should even include, <a href="/playbooks/tracking-activation-metrics-plg-teams">tracking activation metrics for PLG teams</a> walks through how to set it.</p>
+  <p>Tracking activation events directly, instead of reconstructing them from exports, removes the manual rebuild step entirely. Teams that switch off spreadsheets don't need a data analyst to keep the setup running. Dashboards update as new usage data comes in, not when someone finds a free morning to refresh a pivot table.</p>
 
   <h2>A concrete example</h2>
-  <p>Say a team decides activation means a new account has connected at least one data source and invited a second teammate within the first five days. In Funnelsight, that's built as a single funnel step, not a formula split across two tools and reconciled by hand. From there, the team can see, without asking anyone to pull a report, what share of trials hit that step each week and whether that share is moving in the right direction.</p>
+  <p>Say a marketing team tracks trial signups in one spreadsheet and product usage exports in another, joining the two by hand every Monday. With Funnelsight connected to the product and the CRM, that same team sees signups, activation, and pipeline stage in a single funnel, updated automatically. Instead of losing a morning to reconciling two files, they spend it looking at what the drop-off actually shows.</p>
 
   <div class="article-cta">
-    <p>See how activation events look once they're wired into your existing signup flow.</p>
+    <p>Stop rebuilding the same spreadsheet every week.</p>
     <a href="/trial.html" class="btn-primary accent">Start free trial</a>
   </div>
 
   <div class="article-faq">
     <details>
-      <summary>What counts as an activation event?</summary>
-      <p>Whatever signals real use of your product, not just a signup. Most PLG teams pick something like a first key action, an invited teammate, or a connected integration.</p>
+      <summary>Do I need a data team to move off spreadsheets?</summary>
+      <p>No. Funnelsight is built to run without a dedicated data team. Most teams connect their product and CRM data and have a working funnel within the 14-day trial, no credit card required.</p>
     </details>
     <details>
-      <summary>Do I need engineering help to set this up?</summary>
-      <p>No. Funnelsight is built for teams without a dedicated data team, and activation events are configured from existing product usage data, not custom tracking code.</p>
+      <summary>Can I keep using spreadsheets alongside Funnelsight?</summary>
+      <p>Yes, plenty of teams keep spreadsheets around for one-off analysis. What changes is that the funnel numbers everyone reports on come from one consistent source instead of separate manual exports.</p>
     </details>
     <details>
-      <summary>Is there a trial to test this on real data?</summary>
-      <p>Yes, 14 days, no credit card required.</p>
+      <summary>Where is the data hosted?</summary>
+      <p>Funnelsight is hosted in the EU, which matters for teams that need to keep customer data within European infrastructure.</p>
     </details>
   </div>
 </article>
