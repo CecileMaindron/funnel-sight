@@ -66,6 +66,22 @@ h1, h2, h3 {
   font-weight: 600;
 }
 
+/* Mobile nav toggle: <details> element wrapping .nav-links.
+   On desktop it's neutralized (display: contents) so .nav-links behaves
+   exactly as before, laid out directly as a flex child of .nav .wrap. */
+.nav-toggle { display: contents; }
+.nav-toggle summary {
+  display: none;
+  list-style: none;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 500;
+}
+.nav-toggle summary::-webkit-details-marker { display: none; }
+.nav-toggle summary::marker { content: ''; }
+.nav-toggle summary::after { content: '+'; margin-left: 6px; color: var(--indigo); }
+.nav-toggle[open] summary::after { content: '\2212'; }
+
 /* Hero */
 .hero {
   padding: 96px 0 80px;
@@ -279,6 +295,19 @@ footer .wrap { display: flex; justify-content: space-between; align-items: cente
 
 @media (max-width: 860px) {
   .hero, .trial-layout, .audience-grid, .values { grid-template-columns: 1fr; }
-  .hero h1, .trial-hero h1 { font-size: 34px; max-width: none; }
-  .nav-links { display: none; }
+  .hero h1, .trial-hero h1 { font-size: 34px; max-width: 22ch; }
+
+  .nav .wrap { flex-wrap: wrap; justify-content: flex-start; gap: 16px; }
+  .nav-toggle { display: block; order: 2; margin-left: auto; }
+  .nav-toggle summary { display: block; padding: 10px 4px; min-height: 24px; }
+  .nav-cta { order: 3; }
+  .nav-links {
+    display: none;
+    order: 4;
+    flex-basis: 100%;
+    flex-direction: column;
+    gap: 4px;
+    padding-top: 12px;
+  }
+  .nav-toggle[open] .nav-links { display: flex; }
 }
