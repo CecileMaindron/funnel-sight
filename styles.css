@@ -295,7 +295,7 @@ footer .wrap { display: flex; justify-content: space-between; align-items: cente
 
 @media (max-width: 860px) {
   .hero, .trial-layout, .audience-grid, .values { grid-template-columns: 1fr; }
-  .hero h1, .trial-hero h1 { font-size: 34px; max-width: 22ch; }
+  .hero h1, .trial-hero h1 { font-size: 28px; max-width: none; }
 
   .nav .wrap { flex-wrap: wrap; justify-content: flex-start; gap: 16px; }
   .nav-toggle { display: block; order: 2; margin-left: auto; }
