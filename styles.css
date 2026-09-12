@@ -296,7 +296,8 @@ footer .wrap { display: flex; justify-content: space-between; align-items: cente
 @media (max-width: 860px) {
   .hero, .trial-layout, .audience-grid, .values { grid-template-columns: 1fr; }
   .hero h1, .trial-hero h1 { font-size: 26px; max-width: none; }
-  .hero.wrap, .trial-hero.wrap { padding-left: 40px; padding-right: 40px; }
+  .hero.wrap, .trial-hero.wrap, .values.wrap, .faq-section.wrap { padding-left: 40px; padding-right: 40px; }
+  .faq-section h2 { font-size: 26px; }
 
   .nav .wrap { flex-wrap: wrap; justify-content: flex-start; gap: 16px; }
   .nav-toggle { display: block; order: 2; margin-left: auto; }
