@@ -66,21 +66,21 @@ h1, h2, h3 {
   font-weight: 600;
 }
 
-/* Mobile nav toggle: <details> element wrapping .nav-links.
-   On desktop it's neutralized (display: contents) so .nav-links behaves
-   exactly as before, laid out directly as a flex child of .nav .wrap. */
-.nav-toggle { display: contents; }
-.nav-toggle summary {
+/* Mobile nav toggle: hidden checkbox + label, not a <details>.
+   .nav-links stays completely untouched by default (the unconditional rule
+   above still applies at every width) — the checkbox/label pair is inert
+   until the mobile media query gives it a role. This avoids relying on any
+   native browser behavior tied to <details>/[open], which proved unreliable
+   across browsers. */
+.nav-toggle-input { display: none; }
+.nav-toggle-label {
   display: none;
-  list-style: none;
   cursor: pointer;
   font-size: 15px;
   font-weight: 500;
 }
-.nav-toggle summary::-webkit-details-marker { display: none; }
-.nav-toggle summary::marker { content: ''; }
-.nav-toggle summary::after { content: '+'; margin-left: 6px; color: var(--indigo); }
-.nav-toggle[open] summary::after { content: '\2212'; }
+.nav-toggle-label::after { content: '+'; margin-left: 6px; color: var(--indigo); }
+.nav-toggle-input:checked ~ .nav-toggle-label::after { content: '\2212'; }
 
 /* Hero */
 .hero {
@@ -305,8 +305,7 @@ footer .wrap { display: flex; justify-content: space-between; align-items: cente
   .article h1 { font-size: 28px; }
 
   .nav .wrap { flex-wrap: wrap; justify-content: flex-start; gap: 16px; }
-  .nav-toggle { display: block; order: 2; margin-left: auto; }
-  .nav-toggle summary { display: block; padding: 10px 4px; min-height: 24px; }
+  .nav-toggle-label { display: block; order: 2; margin-left: auto; padding: 10px 4px; min-height: 24px; }
   .nav-cta { order: 3; }
   .nav-links {
     display: none;
@@ -316,5 +315,5 @@ footer .wrap { display: flex; justify-content: space-between; align-items: cente
     gap: 4px;
     padding-top: 12px;
   }
-  .nav-toggle[open] .nav-links { display: flex; }
+  .nav-toggle-input:checked ~ .nav-links { display: flex; }
 }
