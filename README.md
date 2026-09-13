@@ -26,3 +26,4 @@ Static site, plain HTML/CSS, no framework or build step, deployed on Cloudflare 
 Pages under `/playbooks/` and `/glossary/` are produced through a flow combining n8n and the Claude API: keyword selection, content generation, human validation before publishing. The full process and the page templates used live in a separate Claude project, not in this repo.
 
 `content-memory.md`, at the repo root, acts as the reference memory used to avoid duplicate content and keep internal linking consistent from page to page. A copy is also kept in the dedicated Claude generation project as a convenience shortcut during the manual testing phase.
+
