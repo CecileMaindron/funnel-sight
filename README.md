@@ -19,11 +19,10 @@ Marketing site for Funnelsight, a fictional growth analytics platform for market
 
 ## Stack
 
-Static site, plain HTML/CSS, no framework or build step, deployed on Cloudflare Pages. No JavaScript beyond a submit-prevention safeguard on the (disabled) trial form.
+Static site, plain HTML/CSS, no framework or build step, deployed on Cloudflare Pages. JavaScript is limited to a submit-prevention safeguard on the (disabled) trial form, a Google Analytics 4 tag (manual gtag.js install, not Google Tag Manager, since a single tag doesn't need the extra layer), and a lightweight consent banner implementing Google Consent Mode v2 (analytics storage denied by default, granted only after an explicit visitor choice, stored in `localStorage`). Both live in `page-shell.html` so every generated page inherits them automatically; the four core pages (`index.html`, `trial.html`, `resources.html`, `404.html`) carry the same block since they don't go through the shell.
 
 ## SEO content production
 
 Pages under `/playbooks/` and `/glossary/` are produced through a flow combining n8n and the Claude API: keyword selection, content generation, human validation before publishing. The full process and the page templates used live in a separate Claude project, not in this repo.
 
 `content-memory.md`, at the repo root, acts as the reference memory used to avoid duplicate content and keep internal linking consistent from page to page. A copy is also kept in the dedicated Claude generation project as a convenience shortcut during the manual testing phase.
-
