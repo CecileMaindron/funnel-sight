@@ -22,7 +22,8 @@ Possible values for `hierarchical_position`:
 /glossary/how-to-calculate-churn-rate-b2b-saas | How to calculate churn rate for B2B SaaS: Funnelsight | educational | both | how to calculate churn rate b2b saas, comment calculer son taux de churn b2b saas | informational | cluster | → /features/activation-retention-dashboard-plg-teams, /trial.html ; ← /resources.html, /glossary/how-to-calculate-net-revenue-retention-b2b-saas (one-directional link, missing return link opportunity) | published
 /glossary/how-to-calculate-net-revenue-retention-b2b-saas | How to calculate net revenue retention (NRR): Funnelsight | educational | both | how to calculate net revenue retention, NRR calculation b2b saas | informational | cluster | → /glossary/how-to-calculate-churn-rate-b2b-saas, /features/activation-retention-dashboard-plg-teams, /trial.html ; ← /resources.html | published
 /playbooks/tracking-plg-funnel-without-data-team | Track your PLG funnel without a data team: Funnelsight | usecase | marketing_growth | how to start tracking your PLG funnel without a data team | informational | cluster | → /playbooks/spreadsheet-vs-analytics-tool-plg-tracking, /trial.html ; ← /resources.html | published
+/playbooks/self-serve-revenue-vs-sales-assisted-crm | Why self-serve revenue gets lost in your CRM: Funnelsight | usecase | both | self-serve revenue vs sales-assisted revenue, self-serve revenue tracking CRM | informational / problem-aware | cluster | → /glossary/how-to-calculate-net-revenue-retention-b2b-saas (one-directional link, missing return link opportunity), /trial.html ; ← /resources.html | published
 
-(9 SEO pages published to date. Sorted by category since 2026-09-11:
+(10 SEO pages published to date. Sorted by category since 2026-09-11:
 /playbooks/ for usecase, /glossary/ for educational, /case-studies/ for
 case_study, /features/ for feature.)
