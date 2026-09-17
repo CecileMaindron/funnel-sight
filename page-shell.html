@@ -66,6 +66,15 @@ Fill in ONLY the zones marked <!-- FILL: ... --> below.
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title><!-- FILL: TITLE --></title>
 <meta name="description" content="<!-- FILL: META_DESCRIPTION -->">
+<link rel="canonical" href="<!-- FILL: CANONICAL_URL -->">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Funnelsight">
+<meta property="og:title" content="<!-- FILL: TITLE -->">
+<meta property="og:description" content="<!-- FILL: META_DESCRIPTION -->">
+<meta property="og:url" content="<!-- FILL: CANONICAL_URL -->">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="<!-- FILL: TITLE -->">
+<meta name="twitter:description" content="<!-- FILL: META_DESCRIPTION -->">
 <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
@@ -147,7 +156,11 @@ Fill in ONLY the zones marked <!-- FILL: ... --> below.
 
   <!-- FILL: OPTIONAL_FAQ -->
   <!-- Only if the topic warrants it. Use <div class="article-faq"> with <details>/<summary>
-       pairs, same pattern as the homepage FAQ. -->
+       pairs, same pattern as the homepage FAQ. If a FAQ is included, also add a
+       <script type="application/ld+json"> FAQPage schema right after it, mirroring
+       the exact same questions and answers word for word. Omit both entirely together
+       if no FAQ: never publish the JSON-LD without the matching visible FAQ, or the
+       visible FAQ without the JSON-LD. -->
 </article>
 
 <footer>
