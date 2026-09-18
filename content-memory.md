@@ -20,7 +20,6 @@ Possible values for `hierarchical_position`:
 /features/activation-retention-dashboard-plg-teams | Activation and retention dashboard for PLG teams: Funnelsight | feature | marketing_growth | activation retention dashboard PLG | commercial | cluster | → /playbooks/tracking-activation-metrics-plg-teams, /playbooks/spreadsheet-vs-analytics-tool-plg-tracking, /trial.html ; ← /resources.html, /glossary/how-to-calculate-churn-rate-b2b-saas (one-directional link, missing return link opportunity), /glossary/how-to-calculate-net-revenue-retention-b2b-saas (one-directional link, missing return link opportunity) | published
 /case-studies/plg-team-unifies-activation-retention-data | PLG team unifies activation and retention data: Funnelsight | case_study | marketing_growth | example of a PLG team unifying activation and retention data | informational / commercial | cluster | → /playbooks/tracking-activation-metrics-plg-teams, /trial.html ; ← /resources.html | published
 /glossary/how-to-calculate-churn-rate-b2b-saas | How to calculate churn rate for B2B SaaS: Funnelsight | educational | both | how to calculate churn rate b2b saas, comment calculer son taux de churn b2b saas | informational | cluster | → /features/activation-retention-dashboard-plg-teams, /trial.html ; ← /resources.html, /glossary/how-to-calculate-net-revenue-retention-b2b-saas (one-directional link, missing return link opportunity) | published
-/glossary/how-to-calculate-net-revenue-retention-b2b-saas | How to calculate net revenue retention (NRR): Funnelsight | educational | both | how to calculate net revenue retention, NRR calculation b2b saas | informational | cluster | → /glossary/how-to-calculate-churn-rate-b2b-saas, /features/activation-retention-dashboard-plg-teams, /trial.html ; ← /resources.html | published
 /glossary/how-to-calculate-net-revenue-retention-b2b-saas | How to calculate net revenue retention (NRR): Funnelsight | educational | both | how to calculate net revenue retention, NRR calculation b2b saas | informational | cluster | → /glossary/how-to-calculate-churn-rate-b2b-saas, /features/activation-retention-dashboard-plg-teams, /trial.html ; ← /resources.html, /playbooks/self-serve-revenue-vs-sales-assisted-crm (link added 2026-09-17 during this page's creation, one-directional, missing return link opportunity) | published
 /playbooks/tracking-plg-funnel-without-data-team | Track your PLG funnel without a data team: Funnelsight | usecase | marketing_growth | how to start tracking your PLG funnel without a data team | informational | cluster | → /playbooks/spreadsheet-vs-analytics-tool-plg-tracking, /trial.html ; ← /resources.html | published
 /playbooks/self-serve-revenue-vs-sales-assisted-crm | Why self-serve revenue gets lost in your CRM: Funnelsight | usecase | both | self-serve revenue CRM, PLG sales assisted tracking | informational / problem-aware | cluster | → /glossary/how-to-calculate-net-revenue-retention-b2b-saas, /trial.html ; ← /resources.html | published
@@ -33,4 +32,10 @@ Note du 17/09/2026 : l'entrée self-serve-revenue-vs-sales-assisted-crm a été
 reconstituée à partir de la page HTML publiée, le log de génération
 d'origine n'a pas été retrouvé dans cette conversation. keywords et
 search_intent sont une estimation raisonnable, à corriger si le vrai log est
-retrouvé.)
+retrouvé.
+
+Correction du 18/09/2026 : l'entrée
+how-to-calculate-net-revenue-retention-b2b-saas était dupliquée en deux
+lignes quasi identiques (une sans le lien entrant du 17/09, une avec).
+Fusionnée en une seule ligne, conservant la version la plus à jour avec le
+lien entrant.)
