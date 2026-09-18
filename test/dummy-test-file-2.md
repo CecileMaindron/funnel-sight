@@ -1,1 +1,0 @@
-This is a dummy test file created by n8n to test the GitHub push mechanism.
