@@ -12,10 +12,10 @@ Possible values for `hierarchical_position`:
 
 / | Funnelsight — growth analytics for marketing and revenue teams | core | both | PLG growth analytics platform | commercial / navigational | pillar | → /trial.html ; ← global nav (all pages) | published
 /trial | Start your free trial: Funnelsight | core | both | (none — conversion page, out of SEO scope) | transactional | utility | ← global nav + CTA from every content page | published
-/resources | Activation and retention guides for PLG teams: Funnelsight | core | both | PLG resources / growth guides | informational / navigational | hub | → 10 cluster pages (resource cards) ; ← global nav | published
-/playbooks/tracking-activation-metrics-plg-teams | Tracking activation metrics for PLG teams: Funnelsight | usecase | marketing_growth | activation metrics PLG, tracking activation | informational | cluster | → / (#product), /trial.html ; ← /resources.html, /glossary/what-counts-as-activation-in-plg, /playbooks/spreadsheet-vs-analytics-tool-plg-tracking (one-directional link, missing return link opportunity), /case-studies/plg-team-unifies-activation-retention-data (link added 2026-09-14 during this page's backfill, one-directional, missing return link opportunity) | published
+/resources | Activation and retention guides for PLG teams: Funnelsight | core | both | PLG resources / growth guides | informational / navigational | hub | → 11 cluster pages (resource cards) ; ← global nav | published
+/playbooks/tracking-activation-metrics-plg-teams | Tracking activation metrics for PLG teams: Funnelsight | usecase | marketing_growth | activation metrics PLG, tracking activation | informational | cluster | → / (#product), /trial.html ; ← /resources.html, /glossary/what-counts-as-activation-in-plg, /playbooks/spreadsheet-vs-analytics-tool-plg-tracking (one-directional link, missing return link opportunity), /case-studies/plg-team-unifies-activation-retention-data (link added 2026-09-14 during this page's backfill, one-directional, missing return link opportunity), /glossary/what-is-a-product-qualified-lead-pql (link added 2026-09-22 during this page's creation, one-directional, missing return link opportunity) | published
 /playbooks/marketing-sales-funnel-numbers-dont-match | Marketing and sales funnel numbers don't match: Funnelsight | usecase | both | marketing sales funnel alignment | informational / problem-aware | cluster | → / (#product), /trial.html ; ← /resources.html | published
-/glossary/what-counts-as-activation-in-plg | What counts as activation in product-led growth: Funnelsight | educational | marketing_growth | what is activation PLG, PLG activation definition | informational / definitional | cluster | → /playbooks/tracking-activation-metrics-plg-teams, /trial.html ; ← /resources.html | published
+/glossary/what-counts-as-activation-in-plg | What counts as activation in product-led growth: Funnelsight | educational | marketing_growth | what is activation PLG, PLG activation definition | informational / definitional | cluster | → /playbooks/tracking-activation-metrics-plg-teams, /trial.html ; ← /resources.html, /glossary/what-is-a-product-qualified-lead-pql (link added 2026-09-22 during this page's creation, one-directional, missing return link opportunity) | published
 /playbooks/spreadsheet-vs-analytics-tool-plg-tracking | Spreadsheets vs analytics tools for PLG teams: Funnelsight | usecase | both | spreadsheet vs analytics tool PLG tracking | comparative / consideration | cluster | → /playbooks/tracking-activation-metrics-plg-teams, /trial.html ; ← /resources.html, /playbooks/tracking-plg-funnel-without-data-team (link added 2026-09-15 during this page's creation, one-directional, missing return link opportunity) | published
 /features/activation-retention-dashboard-plg-teams | Activation and retention dashboard for PLG teams: Funnelsight | feature | marketing_growth | activation retention dashboard PLG | commercial | cluster | → /playbooks/tracking-activation-metrics-plg-teams, /playbooks/spreadsheet-vs-analytics-tool-plg-tracking, /trial.html ; ← /resources.html, /glossary/how-to-calculate-churn-rate-b2b-saas (one-directional link, missing return link opportunity), /glossary/how-to-calculate-net-revenue-retention-b2b-saas (one-directional link, missing return link opportunity) | published
 /case-studies/plg-team-unifies-activation-retention-data | PLG team unifies activation and retention data: Funnelsight | case_study | marketing_growth | example of a PLG team unifying activation and retention data | informational / commercial | cluster | → /playbooks/tracking-activation-metrics-plg-teams, /trial.html ; ← /resources.html | published
@@ -23,8 +23,9 @@ Possible values for `hierarchical_position`:
 /glossary/how-to-calculate-net-revenue-retention-b2b-saas | How to calculate net revenue retention (NRR): Funnelsight | educational | both | how to calculate net revenue retention, NRR calculation b2b saas | informational | cluster | → /glossary/how-to-calculate-churn-rate-b2b-saas, /features/activation-retention-dashboard-plg-teams, /trial.html ; ← /resources.html, /playbooks/self-serve-revenue-vs-sales-assisted-crm (link added 2026-09-17 during this page's creation, one-directional, missing return link opportunity) | published
 /playbooks/tracking-plg-funnel-without-data-team | Track your PLG funnel without a data team: Funnelsight | usecase | marketing_growth | how to start tracking your PLG funnel without a data team | informational | cluster | → /playbooks/spreadsheet-vs-analytics-tool-plg-tracking, /trial.html ; ← /resources.html | published
 /playbooks/self-serve-revenue-vs-sales-assisted-crm | Why self-serve revenue gets lost in your CRM: Funnelsight | usecase | both | self-serve revenue CRM, PLG sales assisted tracking | informational / problem-aware | cluster | → /glossary/how-to-calculate-net-revenue-retention-b2b-saas, /trial.html ; ← /resources.html | published
+/glossary/what-is-a-product-qualified-lead-pql | What is a product qualified lead (PQL): Funnelsight | educational | marketing_growth | what is a product qualified lead, PQL definition | informational | cluster | → /glossary/what-counts-as-activation-in-plg, /playbooks/tracking-activation-metrics-plg-teams, /trial.html ; ← /resources.html | published
 
-(10 SEO pages published to date. Sorted by category since 2026-09-11:
+(11 SEO pages published to date. Sorted by category since 2026-09-11:
 /playbooks/ for usecase, /glossary/ for educational, /case-studies/ for
 case_study, /features/ for feature.
 
@@ -38,4 +39,11 @@ Correction du 18/09/2026 : l'entrée
 how-to-calculate-net-revenue-retention-b2b-saas était dupliquée en deux
 lignes quasi identiques (une sans le lien entrant du 17/09, une avec).
 Fusionnée en une seule ligne, conservant la version la plus à jour avec le
-lien entrant.)
+lien entrant.
+
+Note du 22/09/2026 : la page what-is-a-product-qualified-lead-pql a
+initialement été rédigée avec une attribution nominative à un auteur PLG
+reconnu (cf. règle sur les sources externes dans
+funnelsight-page-template.md). Correction demandée en révision : retrait de
+l'attribution, reformulation en framing générique ("a common way to frame
+this in PLG circles is..."). Version livrée déjà corrigée.)

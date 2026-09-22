@@ -4,3 +4,4 @@ Suivi de la consommation de tokens par génération de page, pour anticiper la n
 
 | Date | ID | Keyword | Input Tokens | Output Tokens | Max Tokens | Usage Ratio |
 |------|----|---------|--------------|----------------|------------|-------------|
+| 2026-09-22 | 1 | what is a product qualified lead (PQL) | 14635 | 8247 | 16000 | 0.515 |
