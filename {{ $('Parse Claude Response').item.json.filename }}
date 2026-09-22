@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) + Consent Mode v2 -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied',
+    'wait_for_update': 500
+  });
+  gtag('js', new Date());
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NG2EK7DNXQ"></script>
+<script>
+  gtag('config', 'G-NG2EK7DNXQ');
+</script>
+<style>
+  /* Consent banner. Move into styles.css whenever convenient. */
+  .consent-banner {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    background: #14161F;
+    color: #FFFFFF;
+    padding: 16px;
+  }
+  .consent-banner .wrap {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+  .consent-banner p {
+    margin: 0;
+    font-size: 14px;
+    max-width: 60ch;
+  }
+  .consent-banner a { color: #FFFFFF; text-decoration: underline; }
+  .consent-actions { display: flex; gap: 8px; flex-shrink: 0; }
+  .consent-actions button {
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 4px;
+    border: 1px solid #FFFFFF;
+    cursor: pointer;
+  }
+  #consent-accept { background: #FFFFFF; color: #14161F; }
+  #consent-decline { background: transparent; color: #FFFFFF; }
+</style>
+<meta charset="UTF-8">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What is a product qualified lead (PQL): Funnelsight</title>
+<meta name="description" content="A product qualified lead (PQL) is a user whose in-product behavior signals they're ready to buy. Here's how PQLs are defined and tracked.">
+<link rel="canonical" href="https://funnel-sight.pages.dev/glossary/what-is-a-product-qualified-lead-pql">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Funnelsight">
+<meta property="og:title" content="What is a product qualified lead (PQL): Funnelsight">
+<meta property="og:description" content="A product qualified lead (PQL) is a user whose in-product behavior signals they're ready to buy. Here's how PQLs are defined and tracked.">
+<meta property="og:url" content="https://funnel-sight.pages.dev/glossary/what-is-a-product-qualified-lead-pql">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="What is a product qualified lead (PQL): Funnelsight">
+<meta name="twitter:description" content="A product qualified lead (PQL) is a user whose in-product behavior signals they're ready to buy. Here's how PQLs are defined and tracked.">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+
+<div class="consent-banner" id="consent-banner">
+  <div class="wrap">
+    <p>We use Google Analytics to see which pages are useful. No ads, no data shared beyond this account. This is a demo site for a fictional company: no real visitor data is collected beyond this test.</p>
+    <div class="consent-actions">
+      <button id="consent-accept">Accept</button>
+      <button id="consent-decline">Decline</button>
+    </div>
+  </div>
+</div>
+<script>
+(function () {
+  var CONSENT_KEY = 'fs_consent';
+  var stored = localStorage.getItem(CONSENT_KEY);
+  var banner = document.getElementById('consent-banner');
+
+  function setConsent(granted) {
+    gtag('consent', 'update', {
+      'analytics_storage': granted ? 'granted' : 'denied',
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied'
+    });
+    localStorage.setItem(CONSENT_KEY, granted ? 'granted' : 'denied');
+    if (banner) banner.style.display = 'none';
+  }
+
+  if (stored === 'granted' || stored === 'denied') {
+    setConsent(stored === 'granted');
+  } else if (banner) {
+    banner.style.display = 'flex';
+  }
+
+  var acceptBtn = document.getElementById('consent-accept');
+  var declineBtn = document.getElementById('consent-decline');
+  if (acceptBtn) acceptBtn.addEventListener('click', function () { setConsent(true); });
+  if (declineBtn) declineBtn.addEventListener('click', function () { setConsent(false); });
+})();
+</script>
+<nav class="nav">
+  <div class="wrap">
+    <a href="/" class="logo">funnel<span>sight</span></a>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle-input">
+    <label for="nav-toggle" class="nav-toggle-label" aria-label="Menu">Menu</label>
+    <ul class="nav-links">
+      <li><a href="/#product">Product</a></li>
+      <li><a href="/#audience">Who it's for</a></li>
+      <li><a href="/resources.html">Resources</a></li>
+      <li><a href="/trial.html">Start trial</a></li>
+    </ul>
+    <a href="/trial.html" class="nav-cta">Start free trial</a>
+  </div>
+</nav>
+
+<div class="demo-banner">
+  <strong>Funnelsight is a fictional company.</strong> This site was built as a training project and does not offer a real product.
+</div>
+
+<nav class="breadcrumb wrap" aria-label="Breadcrumb">
+  <a href="/">Home</a> / <a href="/resources.html">Resources</a> / <span class="current">What is a product qualified lead (PQL)</span>
+</nav>
+
+<article class="article wrap">
+  <h1>What is a product qualified lead (PQL)</h1>
+  <p class="lede-intro">A product qualified lead (PQL) is a user who has taken specific actions inside your product that show they're likely ready to buy or upgrade. Unlike a marketing qualified lead, which is based on form fills or content downloads, a PQL is defined by real usage: hitting a feature limit, inviting teammates, or reaching an activation milestone.</p>
+
+  <h2>Where the term comes from and how it's used</h2>
+  <p>PQL scoring grew out of product-led growth (PLG), where the product itself does part of the selling. Instead of sales reps guessing who's interested, in-product behavior does the qualifying. A common way to frame this in PLG circles is that a PQL replaces gut-feel lead scoring with something closer to observed intent: the user already tried the thing, they didn't just say they were interested.</p>
+  <p>What counts as a PQL varies by product. A project management tool might flag an account once three or more people are actively assigning tasks. A data tool might flag one once a user connects a live source instead of just importing a sample file. There's no universal threshold. The definition has to match how your product actually delivers value, which is also why <a href="/glossary/what-counts-as-activation-in-plg">defining activation clearly</a> usually comes before defining a PQL: a PQL is often built on top of an activation event, not separate from it.</p>
+
+  <h2>Start with one clear signal, not a scoring model</h2>
+  <p>Teams sometimes try to build a PQL score from day one, combining five or six behaviors into a weighted formula. That's a reasonable goal eventually, but it's not where to start. Pick the single behavior that correlates most obviously with someone getting value from the product, and use that as your first PQL definition. You can pull this from a spreadsheet export at first, reviewed weekly rather than tracked live. Add nuance once that first signal is actually driving conversations between marketing and sales, not before.</p>
+
+  <h2>How this connects to tracking in practice</h2>
+  <p>Once a PQL definition exists, the harder part is usually keeping it visible where sales and marketing both look. Funnelsight lets you define the event that counts as your qualification signal once, and that definition applies consistently across every report afterward instead of living in a document nobody updates. That's the same underlying mechanism used for <a href="/playbooks/tracking-activation-metrics-plg-teams">tracking activation metrics</a>: the definition step is shared, only the threshold and the use case differ.</p>
+
+  <div class="article-cta">
+    <p>See how a PQL definition shows up consistently across your funnel, from first usage to CRM handoff.</p>
+    <a href="/trial.html" class="btn-primary accent">Start free trial</a>
+  </div>
+
+  <div class="article-faq">
+    <details>
+      <summary>Is a PQL the same as an activated user?</summary>
+      <p>Not always. Activation usually marks the point where a user first experiences the product's core value. A PQL is a narrower signal built on top of that, one that specifically suggests buying intent, like hitting a usage limit or adding teammates. Many teams define their first PQL as "activated plus one more sign of intent."</p>
+    </details>
+    <details>
+      <summary>Who owns the PQL definition, marketing or sales?</summary>
+      <p>It works best as a shared definition. Marketing and product usually identify the behavior, and sales confirms it's a meaningful signal worth acting on. If only one side defines it, the other side tends to ignore the resulting lead list.</p>
+    </details>
+  </div>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is a PQL the same as an activated user?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Not always. Activation usually marks the point where a user first experiences the product's core value. A PQL is a narrower signal built on top of that, one that specifically suggests buying intent, like hitting a usage limit or adding teammates. Many teams define their first PQL as \"activated plus one more sign of intent.\""
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Who owns the PQL definition, marketing or sales?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It works best as a shared definition. Marketing and product usually identify the behavior, and sales confirms it's a meaningful signal worth acting on. If only one side defines it, the other side tends to ignore the resulting lead list."
+        }
+      }
+    ]
+  }
+  </script>
+</article>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-brand">
+      <span>Funnelsight, Nantes, France</span>
+      <span>© 2026</span>
+    </div>
+    <div class="footer-links">
+      <a href="https://github.com/CecileMaindron/funnel-sight/blob/main/README.md" target="_blank" rel="noopener">Learn more about this project</a>
+      <a href="https://www.linkedin.com/in/cmaindron/" target="_blank" rel="noopener">Author</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
