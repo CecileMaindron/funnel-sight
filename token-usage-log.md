@@ -7,3 +7,4 @@ Suivi de la consommation de tokens par génération de page, pour anticiper la n
 | 2026-09-22 | 1 | what is a product qualified lead (PQL) | 14635 | 8247 | 16000 | 0.515 |
 | 2026-09-23 | 1 | how to track feature adoption for plg teams | 17589 | 11327 | 16000 | 0.708 |
 | 2026-09-23 | 2 | how to track expansion revenue signals in plg | 17903 | 12092 | 16000 | 0.756 |
+| 2026-09-23 | 4 | how a plg team turned a product qualified lead into a sales conversation | 18457 | 11508 | 16000 | 0.719 |
