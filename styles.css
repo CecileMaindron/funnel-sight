@@ -185,7 +185,22 @@ footer {
   font-size: 14px;
   color: #7B8094;
 }
-footer .wrap { display: flex; justify-content: space-between; align-items: center; }
+footer .wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+.footer-brand, .footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+}
+footer a {
+  color: var(--indigo);
+  text-decoration: underline;
+}
 
 /* Trial / landing page specific */
 .trial-hero {
@@ -293,6 +308,45 @@ footer .wrap { display: flex; justify-content: space-between; align-items: cente
 .resource-card h3 { font-size: 19px; margin-bottom: 8px; }
 .resource-card p { font-size: 15px; color: #454A5B; }
 
+/* Solutions dropdown in nav (replaces the old "Who it's for" anchor) */
+.nav-dropdown { position: relative; }
+.nav-dropdown-label {
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 500;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: inherit;
+}
+.nav-dropdown-label::after { content: ' \25BE'; font-size: 11px; }
+.nav-dropdown-menu { list-style: none; margin-top: 8px; }
+.nav-dropdown-menu a { text-decoration: none; font-size: 15px; font-weight: 500; }
+
+@media (min-width: 861px) {
+  .nav-dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin-top: 12px;
+    background: var(--bg);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 8px 0;
+    min-width: 170px;
+    box-shadow: 0 8px 24px rgba(20, 22, 31, 0.08);
+  }
+  .nav-dropdown-menu li { padding: 0; }
+  .nav-dropdown-menu a { display: block; padding: 8px 16px; }
+  .nav-dropdown-menu a:hover { background: var(--line); }
+  .nav-dropdown:hover .nav-dropdown-menu,
+  .nav-dropdown:focus-within .nav-dropdown-menu {
+    display: block;
+  }
+}
+
 @media (max-width: 860px) {
   .hero, .trial-layout, .audience-grid, .values { grid-template-columns: 1fr; }
   .hero h1, .trial-hero h1 { font-size: 26px; max-width: none; }
@@ -316,4 +370,7 @@ footer .wrap { display: flex; justify-content: space-between; align-items: cente
     padding-top: 12px;
   }
   .nav-toggle-input:checked ~ .nav-links { display: flex; }
+
+  .nav-dropdown-menu { padding-left: 16px; margin-top: 4px; }
+  .nav-dropdown-menu li { padding: 4px 0; }
 }
