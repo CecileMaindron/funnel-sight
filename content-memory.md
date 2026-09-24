@@ -9,6 +9,7 @@ Possible values for `hierarchical_position`:
 - `hub` — distribution page toward specialized content (lists, organizes, doesn't target a specific keyword)
 - `cluster` — satellite page targeting a precise search intent, links up to the hub/pillar
 - `utility` — functional page (conversion, form...), outside SEO targeting
+- `off-flow` — hand-authored page outside the n8n generation flow, not part of the certified page-family structure defined in funnelsight-page-template.md. Listed here only so this file's duplicate/cannibalization detection still covers it. Not counted in the "SEO pages published to date" count below, which tracks certified flow output only.
 
 / | Funnelsight — growth analytics for marketing and revenue teams | core | both | PLG growth analytics platform | commercial / navigational | pillar | → /trial.html ; ← global nav (all pages) | published
 /trial | Start your free trial: Funnelsight | core | both | (none — conversion page, out of SEO scope) | transactional | utility | ← global nav + CTA from every content page | published
@@ -27,6 +28,8 @@ Possible values for `hierarchical_position`:
 /playbooks/tracking-feature-adoption-plg-teams | Tracking feature adoption for PLG teams: Funnelsight | usecase | marketing_growth | how to track feature adoption for plg teams | informational | cluster | → /glossary/what-counts-as-activation-in-plg, /trial.html ; ← /resources.html | published
 /playbooks/tracking-expansion-revenue-signals-plg | Tracking expansion revenue signals in PLG: Funnelsight | usecase | marketing_growth | how to track expansion revenue signals in plg | informational | cluster | → /glossary/what-counts-as-activation-in-plg, /trial.html ; ← /resources.html | published
 /case-studies/plg-team-turns-pql-into-sales-conversation | PLG team turns a PQL into a sales conversation: Funnelsight | case_study | both | how a plg team turned a product qualified lead into a sales conversation | informational | cluster | → /features/activation-retention-dashboard-plg-teams, /glossary/what-is-a-product-qualified-lead-pql, /trial.html ; ← /resources.html | published
+/solutions/marketing | What self-serve growth means for marketing: Funnelsight | solution | marketing_growth | self-serve growth marketing, PLG marketing accountability | informational / commercial | off-flow | → /solutions/sales ; ← /solutions/sales, global nav Solutions dropdown (all pages) | published
+/solutions/sales | Redefining the hot lead in a self-serve motion: Funnelsight | solution | sales | self-serve hot lead, PQL sales, product qualified lead sales | informational / commercial | off-flow | → /solutions/marketing ; ← /solutions/marketing, global nav Solutions dropdown (all pages) | published
 
 (15 SEO pages published to date. Sorted by category since 2026-09-11:
 /playbooks/ for usecase, /glossary/ for educational, /case-studies/ for
@@ -120,4 +123,17 @@ plg-team-turns-pql-into-sales-conversation ajoutée. Elle lie vers
 /glossary/what-is-a-product-qualified-lead-pql sans lien retour depuis ces
 deux pages pour l'instant (opportunité de lien retour signalée dans leurs
 champs internal_linking ci-dessus, à traiter lors du prochain audit de
-maillage).)
+maillage).
+
+Note du 24/09/2026 : ajout de deux pages /solutions/marketing et
+/solutions/sales, rédigées manuellement en dehors du flow n8n (hors
+périmètre de la certification RS7424, à but de portfolio/SEO uniquement).
+Nouveau page_type "solution" et nouvelle valeur hierarchical_position
+"off-flow" introduits pour ces deux entrées uniquement (définition ajoutée
+ci-dessus). Elles ne comptent pas dans les "SEO pages published to date"
+citées plus bas, qui restent la production certifiée du flow n8n. Elles
+sont listées ici uniquement pour que ce fichier continue de couvrir la
+détection de doublons/cannibalisation sur l'ensemble du site, y compris le
+contenu hors flow. Le nav global de chaque page a aussi été mis à jour :
+l'ancre "Who it's for" (#audience) est remplacée par un menu déroulant
+"Solutions" pointant vers ces deux pages.)
