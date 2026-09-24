@@ -330,11 +330,11 @@ footer a {
     position: absolute;
     top: 100%;
     left: 0;
-    margin-top: 12px;
+    margin-top: 0;
     background: var(--bg);
     border: 1px solid var(--line);
     border-radius: 8px;
-    padding: 8px 0;
+    padding: 12px 0 8px;
     min-width: 170px;
     box-shadow: 0 8px 24px rgba(20, 22, 31, 0.08);
   }
