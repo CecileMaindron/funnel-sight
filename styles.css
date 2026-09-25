@@ -296,6 +296,7 @@ footer a {
   background: var(--white); border: 1px solid var(--line); border-radius: 8px;
 }
 .article-faq { margin-top: 48px; border-top: 1px solid var(--line); padding-top: 32px; }
+.article-faq.no-border { border-top: none; padding-top: 0; }
 
 /* Resources hub */
 .resources-hero { padding: 96px 0 48px; }
