@@ -296,7 +296,17 @@ footer a {
   background: var(--white); border: 1px solid var(--line); border-radius: 8px;
 }
 .article-faq { margin-top: 48px; border-top: 1px solid var(--line); padding-top: 32px; }
-.article-faq.no-border { border-top: none; padding-top: 0; }
+
+/* Standalone FAQ block (trial page): the article layout's own 64px bottom
+   padding isn't present here, so this framed variant gets its own top and
+   bottom border plus margin, instead of relying on the footer's border for
+   closure. */
+.trial-faq {
+  margin: 56px 0 64px;
+  padding: 32px 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
 
 /* Resources hub */
 .resources-hero { padding: 96px 0 48px; }
