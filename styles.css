@@ -302,7 +302,8 @@ footer a {
    bottom border plus margin, instead of relying on the footer's border for
    closure. */
 .trial-faq {
-  margin: 56px 0 64px;
+  margin-top: 56px;
+  margin-bottom: 64px;
   padding: 32px 0;
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
