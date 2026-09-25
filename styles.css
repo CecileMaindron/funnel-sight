@@ -232,6 +232,8 @@ footer a {
   margin-top: 7px;
   flex-shrink: 0;
 }
+.trial-proof { margin-top: 24px; font-size: 14px; color: #7B8094; }
+.trial-proof a { color: var(--indigo); text-decoration: underline; }
 
 .form-card {
   background: var(--white);
