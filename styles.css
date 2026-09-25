@@ -313,7 +313,37 @@ footer a {
 .resources-hero { padding: 96px 0 48px; }
 .resources-hero h1 { font-size: 40px; margin-bottom: 16px; }
 .resources-hero p { font-size: 18px; color: #454A5B; max-width: 60ch; }
-.resources-list { padding-bottom: 96px; display: grid; gap: 24px; }
+.resources-list { padding-bottom: 96px; }
+
+/* Category accordion: native <details>/<summary>, same pattern as the FAQ
+   blocks. No JS, works the same way on desktop and mobile, keyboard and
+   screen-reader accessible by default. */
+.resource-group {
+  border-top: 1px solid var(--line);
+}
+.resource-group:last-child { border-bottom: 1px solid var(--line); }
+.resource-group summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0;
+}
+.resource-group summary::-webkit-details-marker { display: none; }
+.resource-group summary::marker { content: ''; }
+.resource-group summary h2 { font-size: 22px; margin: 0; }
+.resource-group summary::after {
+  content: '\25BE';
+  font-size: 14px;
+  color: var(--indigo);
+  transition: transform 0.15s ease;
+  flex-shrink: 0;
+  margin-left: 16px;
+}
+.resource-group[open] summary::after { transform: rotate(180deg); }
+
+.resource-cards { display: grid; gap: 24px; padding-bottom: 32px; }
 .resource-card {
   border: 1px solid var(--line); border-radius: 8px; padding: 24px;
   text-decoration: none; color: inherit; display: block;
