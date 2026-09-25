@@ -13,3 +13,4 @@ Suivi de la consommation de tokens par génération de page, pour anticiper la n
 | 2026-09-25 | 15 | user behavior before upgrade | 19081 | 11644 | 16000 | 0.728 |
 | 2026-09-25 | 17 | trial conversion case study | 19460 | 11185 | 16000 | 0.699 |
 | 2026-09-25 | 18 | user-level vs account-level analytics | 19650 | 11795 | 16000 | 0.737 |
+| 2026-09-25 | 22 | LTV:CAC ratio | 19967 | 5321 | 16000 | 0.333 |
