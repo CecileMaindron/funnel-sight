@@ -22,6 +22,23 @@ A single, auditable pipeline: keyword in, decision and page out, human review be
 
 I'm a B2B growth marketer, not a software engineer. The engineering I don't have professional depth in (GitHub API calls, workflow orchestration) is where I worked with Claude as a collaborator. The process design, the editorial and brand constraints, the quality checks, and every call on what to automate versus keep manual: that part is mine.
 
+### Architecture
+
+```mermaid
+flowchart LR
+    A[Keyword] --> B[Claude API call<br/>create / skip / duplicate]
+    B -->|skip or duplicate| C[Logged, no page created]
+    B -->|create| D[Slack review<br/>full page attached]
+    D -->|rejected, with comment| B
+    D -->|approved| E[GitHub PR<br/>page + memory + sitemap + token log]
+    E --> F[Human merge]
+    F --> G[Live on Cloudflare Pages]
+```
+
+The actual n8n canvas, for scale:
+
+![n8n workflow canvas](assets/n8n-canvas.png)
+
 ## Site structure
 
 ```
@@ -67,6 +84,8 @@ Nothing reaches the live site without a human decision at two points.
 Claude's generation call can only propose `create`, `skip` or `duplicate`. It never publishes directly. A `create` proposal goes to a Slack review before anything is written to GitHub. If it's rejected, the reviewer's notes feed automatically into the next generation pass, instead of starting over from a blank prompt.
 
 Once approved, everything ships together in a single pull request: the new page, plus any update to the internal memory, sitemap and resource index. The automation opens the PR. A person merges it.
+
+![Slack review, decision reasoning and token cost on a merged PR](assets/github-pr-detail.png)
 
 The repo's `main` branch is protected. No direct pushes are possible, a PR is required every time, and that rule can't be bypassed even by an admin token. The human review step is a structural guarantee, not a convention that could slip under deadline pressure.
 
