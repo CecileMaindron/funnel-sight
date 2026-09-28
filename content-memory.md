@@ -2,7 +2,9 @@
 
 This file lists every page published on funnel-sight.pages.dev. It is read by n8n on every run of the flow and injected into the prompt sent to Claude, to avoid duplicates, detect cannibalization risks, and propose relevant internal links.
 
-Format: `slug | title (H1) | page_type | target_audience | keywords | search_intent | hierarchical_position | internal_linking | status`
+Format: `slug | title (<title> tag) | page_type | target_audience | keywords | search_intent | hierarchical_position | internal_linking | status`
+
+Note (added 2026-09-28): the `title` field tracks the page's `<title>` tag (SEO-facing, kept aligned with the target keyword), not necessarily the on-page H1 shown to a visitor. The two are usually identical, but can differ: since 2026-09-28, several `playbooks` pages carry a shorter, non-repetitive H1 (dropping an audience qualifier like "for PLG teams") while keeping the full keyword-matched phrase in `<title>`, `meta description`, and the breadcrumb follows the H1. See the decisions journal (28/09/2026) for the reasoning.
 
 Possible values for `hierarchical_position`:
 - `pillar` — core page, captures the generic/brand intent
