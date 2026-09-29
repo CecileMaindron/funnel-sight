@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) + Consent Mode v2 -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied',
+    'wait_for_update': 500
+  });
+  gtag('js', new Date());
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NG2EK7DNXQ"></script>
+<script>
+  gtag('config', 'G-NG2EK7DNXQ');
+</script>
+<style>
+  /* Consent banner. Move into styles.css whenever convenient. */
+  .consent-banner {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    background: #14161F;
+    color: #FFFFFF;
+    padding: 16px;
+  }
+  .consent-banner .wrap {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+  .consent-banner p {
+    margin: 0;
+    font-size: 14px;
+    max-width: 60ch;
+  }
+  .consent-banner a { color: #FFFFFF; text-decoration: underline; }
+  .consent-actions { display: flex; gap: 8px; flex-shrink: 0; }
+  .consent-actions button {
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 4px;
+    border: 1px solid #FFFFFF;
+    cursor: pointer;
+  }
+  #consent-accept { background: #FFFFFF; color: #14161F; }
+  #consent-decline { background: transparent; color: #FFFFFF; }
+</style>
+<meta charset="UTF-8">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to calculate net revenue retention (NRR): Funnelsight</title>
+<meta name="description" content="Learn how to calculate net revenue retention (NRR) for B2B SaaS: the formula, what counts as expansion and contraction, and how to start tracking it simply.">
+<link rel="canonical" href="https://funnel-sight.pages.dev/glossary/how-to-calculate-net-revenue-retention-b2b-saas">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Funnelsight">
+<meta property="og:title" content="How to calculate net revenue retention (NRR): Funnelsight">
+<meta property="og:description" content="Learn how to calculate net revenue retention (NRR) for B2B SaaS: the formula, what counts as expansion and contraction, and how to start tracking it simply.">
+<meta property="og:url" content="https://funnel-sight.pages.dev/glossary/how-to-calculate-net-revenue-retention-b2b-saas">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="How to calculate net revenue retention (NRR): Funnelsight">
+<meta name="twitter:description" content="Learn how to calculate net revenue retention (NRR) for B2B SaaS: the formula, what counts as expansion and contraction, and how to start tracking it simply.">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+
+<div class="consent-banner" id="consent-banner">
+  <div class="wrap">
+    <p>We use Google Analytics to see which pages are useful. No ads, no data shared beyond this account. This is a demo site for a fictional company: no real visitor data is collected beyond this test.</p>
+    <div class="consent-actions">
+      <button id="consent-accept">Accept</button>
+      <button id="consent-decline">Decline</button>
+    </div>
+  </div>
+</div>
+<script>
+(function () {
+  var CONSENT_KEY = 'fs_consent';
+  var stored = localStorage.getItem(CONSENT_KEY);
+  var banner = document.getElementById('consent-banner');
+
+  function setConsent(granted) {
+    gtag('consent', 'update', {
+      'analytics_storage': granted ? 'granted' : 'denied',
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied'
+    });
+    localStorage.setItem(CONSENT_KEY, granted ? 'granted' : 'denied');
+    if (banner) banner.style.display = 'none';
+  }
+
+  if (stored === 'granted' || stored === 'denied') {
+    setConsent(stored === 'granted');
+  } else if (banner) {
+    banner.style.display = 'flex';
+  }
+
+  var acceptBtn = document.getElementById('consent-accept');
+  var declineBtn = document.getElementById('consent-decline');
+  if (acceptBtn) acceptBtn.addEventListener('click', function () { setConsent(true); });
+  if (declineBtn) declineBtn.addEventListener('click', function () { setConsent(false); });
+})();
+</script>
+<nav class="nav">
+  <div class="wrap">
+    <a href="/" class="logo">funnel<span>sight</span></a>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle-input">
+    <label for="nav-toggle" class="nav-toggle-label" aria-label="Menu">Menu</label>
+    <ul class="nav-links">
+      <li><a href="/#product">Product</a></li>
+      <li class="nav-dropdown">
+        <button type="button" class="nav-dropdown-label">Solutions</button>
+        <ul class="nav-dropdown-menu">
+          <li><a href="/solutions/marketing">For Marketing</a></li>
+          <li><a href="/solutions/sales">For Sales</a></li>
+        </ul>
+      </li>
+      <li><a href="/resources">Resources</a></li>
+      <li><a href="/trial">Start trial</a></li>
+    </ul>
+    <a href="/trial" class="nav-cta">Start free trial</a>
+  </div>
+</nav>
+
+<div class="demo-banner">
+  <strong>Funnelsight is a fictional company.</strong> This site was built as a training project and does not offer a real product.
+</div>
+
+<nav class="breadcrumb wrap" aria-label="Breadcrumb">
+  <a href="/">Home</a> / <a href="/resources">Resources</a> / <span class="current">How to calculate net revenue retention (NRR)</span>
+</nav>
+
+<article class="article wrap">
+  <h1>How to calculate net revenue retention (NRR)</h1>
+  <p class="lede-intro">Net revenue retention (NRR) measures the revenue you keep and grow from your existing customer base over a period, leaving new customer revenue out entirely. The formula: NRR = (starting revenue + expansion revenue − contraction revenue − churned revenue) ÷ starting revenue, expressed as a percentage. An NRR above 100% means expansion is outpacing losses, even before a single new logo is signed.</p>
+
+  <h2>Why NRR is different from churn rate</h2>
+  <p>Churn rate tells you how much revenue you lost. NRR tells you the full picture: losses offset by growth from the same customers. A company can have real churn and still post a healthy NRR, if upsells and expansions from the accounts that stayed cover the gap. That's why B2B SaaS teams track both side by side rather than picking one. If churn rate is the metric you're missing, see how to <a href="/glossary/how-to-calculate-churn-rate-b2b-saas">calculate churn rate for B2B SaaS</a>.</p>
+
+  <h2>What counts as expansion and contraction</h2>
+  <p>Expansion revenue covers anything that grows an existing account: seat upgrades, plan tier changes, add-on purchases. Contraction revenue covers the opposite, a downgrade or a reduction in seats that doesn't fully cancel the account. Churned revenue is the full loss from an account that cancels outright. Keeping these three buckets separate, rather than lumping everything into one "net change" number, is what makes NRR useful for diagnosing where the movement is actually coming from. This gets harder when self-serve accounts are involved: a customer already expanding through the product can still be sitting in your CRM under the wrong stage, which throws off the count before you've even started calculating. See <a href="/playbooks/self-serve-revenue-vs-sales-assisted-crm">why self-serve revenue gets lost in your CRM</a> for how that mismatch happens.</p>
+
+  <h2>Start simple, before building a full revenue model</h2>
+  <p>You don't need a finance-grade system to get a first NRR number. A spreadsheet tracking monthly recurring revenue per customer, updated on a set schedule rather than in real time, is enough to start. Pick one plan tier or customer segment first instead of trying to cover every pricing scenario at once. The goal is a smaller, reliable starting point, not a rougher or less accurate one: the data behind the number still has to be correct, only its scope stays narrow at first.</p>
+  <p>Once that manual process is solid and you're tired of rebuilding the spreadsheet every month, a shared view that pulls product usage and CRM data together, like Funnelsight's <a href="/features/activation-retention-dashboard-plg-teams">activation and retention dashboard</a>, takes over the recalculation for you.</p>
+
+  <div class="article-cta">
+    <p>See your net revenue retention update automatically as usage and account data change.</p>
+    <a href="/trial" class="btn-primary accent">Start free trial</a>
+  </div>
+
+  <div class="article-faq">
+    <details>
+      <summary>Is NRR the same as gross revenue retention (GRR)?</summary>
+      <p>No. GRR only counts losses (contraction and churn) and caps at 100%, since it excludes expansion. NRR includes expansion, so it can go above 100%. The two together show whether growth from existing customers is coming from upsells, or just from keeping churn low.</p>
+    </details>
+    <details>
+      <summary>What's a good NRR for a B2B SaaS company?</summary>
+      <p>There's no single universal target, it depends on pricing model, customer segment, and company stage. Most teams get more value from watching their own NRR trend month over month than from comparing against an external benchmark.</p>
+    </details>
+  </div>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is NRR the same as gross revenue retention (GRR)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. GRR only counts losses (contraction and churn) and caps at 100%, since it excludes expansion. NRR includes expansion, so it can go above 100%. The two together show whether growth from existing customers is coming from upsells, or just from keeping churn low."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What's a good NRR for a B2B SaaS company?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "There's no single universal target, it depends on pricing model, customer segment, and company stage. Most teams get more value from watching their own NRR trend month over month than from comparing against an external benchmark."
+      }
+    }
+  ]
+}
+</script>
+
+</article>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-brand">
+      <span>Funnelsight, Nantes, France</span>
+      <span>© 2026</span>
+    </div>
+    <div class="footer-links">
+      <a href="https://github.com/CecileMaindron/funnel-sight/blob/main/README.md" target="_blank" rel="noopener">Learn more about this project</a>
+      <a href="https://www.linkedin.com/in/cmaindron/" target="_blank" rel="noopener">Author</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
