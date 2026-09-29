@@ -43,8 +43,8 @@ The actual n8n canvas, for scale:
 
 ```
 /                           homepage
-/trial.html                 trial signup page (disabled)
-/resources.html             guides and articles hub
+/trial                      trial signup page (disabled)
+/resources                  guides and articles hub
 /playbooks/                 use-case SEO pages
 /features/                  product feature SEO pages
 /glossary/                  educational / GEO SEO pages
