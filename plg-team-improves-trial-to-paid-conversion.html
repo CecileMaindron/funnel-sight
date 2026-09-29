@@ -60,17 +60,17 @@
 <meta charset="UTF-8">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title><!-- FILL: TITLE --></title>
-<meta name="description" content="<!-- FILL: META_DESCRIPTION -->">
-<link rel="canonical" href="<!-- FILL: CANONICAL_URL -->">
+<title>PLG team improves trial-to-paid conversion: Funnelsight</title>
+<meta name="description" content="Illustrative example: a PLG team traces paying accounts back through their trial activity to find what separates converters from drop-offs.">
+<link rel="canonical" href="https://funnel-sight.pages.dev/case-studies/plg-team-improves-trial-to-paid-conversion">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Funnelsight">
-<meta property="og:title" content="<!-- FILL: TITLE -->">
-<meta property="og:description" content="<!-- FILL: META_DESCRIPTION -->">
-<meta property="og:url" content="<!-- FILL: CANONICAL_URL -->">
+<meta property="og:title" content="PLG team improves trial-to-paid conversion: Funnelsight">
+<meta property="og:description" content="Illustrative example: a PLG team traces paying accounts back through their trial activity to find what separates converters from drop-offs.">
+<meta property="og:url" content="https://funnel-sight.pages.dev/case-studies/plg-team-improves-trial-to-paid-conversion">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="<!-- FILL: TITLE -->">
-<meta name="twitter:description" content="<!-- FILL: META_DESCRIPTION -->">
+<meta name="twitter:title" content="PLG team improves trial-to-paid conversion: Funnelsight">
+<meta name="twitter:description" content="Illustrative example: a PLG team traces paying accounts back through their trial activity to find what separates converters from drop-offs.">
 <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
@@ -126,7 +126,6 @@
         <ul class="nav-dropdown-menu">
           <li><a href="/solutions/marketing">For Marketing</a></li>
           <li><a href="/solutions/sales">For Sales</a></li>
-          <li><a href="/solutions/customer-success">For Customer Success</a></li>
         </ul>
       </li>
       <li><a href="/resources">Resources</a></li>
@@ -141,29 +140,31 @@
 </div>
 
 <nav class="breadcrumb wrap" aria-label="Breadcrumb">
-  <a href="/">Home</a> / <a href="/resources">Resources</a> / <span class="current"><!-- FILL: H1 --></span>
+  <a href="/">Home</a> / <a href="/resources">Resources</a> / <span class="current">PLG team improves trial-to-paid conversion</span>
 </nav>
 
 <article class="article wrap">
-  <h1><!-- FILL: H1 --></h1>
-  <p class="lede-intro"><!-- FILL: INTRO_PARAGRAPH --></p>
+  <h1>PLG team improves trial-to-paid conversion</h1>
+  <p class="lede-intro">Illustrative example. This case study describes a fictional company, built to show how a PLG team could use Funnelsight to find out why some trials convert and others don't, then act on it.</p>
 
-  <!-- FILL: BODY_SECTIONS -->
-  <!-- H2 sections per the page family structure defined in funnelsight-page-template.md.
-       Include one soft contextual inline link where the template calls for it. -->
+  <h2>Context</h2>
+  <p>The team in this example, a mid-size project management SaaS company we'll call Ridgeline, ran a 14-day self-serve trial. Signups were healthy. Paid conversions weren't. Nobody on the growth team could say with confidence what separated a trial that converted from one that didn't, beyond guesswork ("they probably didn't invite teammates").</p>
+  <p>Trial activity lived in the product database. Who actually paid lived in the CRM. Comparing the two meant a manual export every time someone wanted to check a theory, which meant nobody checked it often.</p>
 
+  <h2>Approach</h2>
+  <p>Ridgeline connected its product usage data and CRM data in <a href="/features/activation-retention-dashboard-plg-teams">Funnelsight's shared funnel view</a>, so trial behavior and paid status sat in the same report instead of two separate systems.</p>
+  <p>The first step was straightforward: track trial-specific events (first project created, first teammate invited, first integration connected) for every account starting day one of the trial.</p>
+  <p>The second step is the one that actually produced an answer. Rather than only watching new trials go forward, the team went backward: they pulled the list of accounts that had converted to paid over the previous quarter, then traced each one back through its trial-period activity. The question wasn't "what should predict conversion" but "what did our paying accounts actually do, in fact, during their trial". This reverse-engineering step surfaced a pattern the team hadn't hypothesized on their own: accounts that invited a second teammate within the first 4 days of the trial converted at a meaningfully higher rate than accounts that invited nobody, or invited someone later.
+  <p>Once that pattern was visible, Ridgeline used Funnelsight's rule-based scoring to flag trial accounts hitting that same early-invite behavior, so the team could prioritize outreach toward the trials most likely to convert instead of spreading effort evenly across all of them.</p>
+
+  <h2>Result</h2>
+  <p>In this illustrative scenario, trials that invited a second teammate within the first 4 days converted to paid at roughly twice the rate of trials that didn't, based on the reverse-engineered cohort Ridgeline built. The team started weighting early-invite behavior as a factor in their trial follow-up sequence, without redesigning the trial itself.</p>
+<p>Tracking the events themselves needed a short, one-time setup from an engineer, standard for any product analytics tool. From there, one person on the growth team could pull the backward-looking report and act on it directly in Funnelsight — no data analyst needed for the analysis itself.</p>
   <div class="article-cta">
-    <p><!-- FILL: CTA_LEAD_LINE --></p>
+    <p>Want to see if the same kind of pattern shows up in your own trial data?</p>
     <a href="/trial" class="btn-primary accent">Start free trial</a>
   </div>
 
-  <!-- FILL: OPTIONAL_FAQ -->
-  <!-- Only if the topic warrants it. Use <div class="article-faq"> with <details>/<summary>
-       pairs, same pattern as the homepage FAQ. If a FAQ is included, also add a
-       <script type="application/ld+json"> FAQPage schema right after it, mirroring
-       the exact same questions and answers word for word. Omit both entirely together
-       if no FAQ: never publish the JSON-LD without the matching visible FAQ, or the
-       visible FAQ without the JSON-LD. -->
 </article>
 
 <footer>
