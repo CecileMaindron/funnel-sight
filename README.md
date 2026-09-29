@@ -34,6 +34,7 @@ flowchart LR
     E --> F[Human merge]
     F --> G[Live on Cloudflare Pages]
 ```
+See [`docs/architecture-decisions.md`](docs/architecture-decisions.md) for the reasoning behind these choices, and the trade-offs I'd reconsider if the project grew.
 
 The actual n8n canvas, for scale:
 
