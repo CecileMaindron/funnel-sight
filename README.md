@@ -8,7 +8,7 @@ Funnelsight is a fictional growth analytics platform for marketing and revenue t
 
 It isn't a real product. It's the practical half of a certification project (RS7424, AI-driven transformation of work processes) on using AI to change how a piece of marketing work actually gets done, not just generate text faster.
 
-**Live site:** [funnel-sight.pages.dev](https://funnel-sight.pages.dev)
+**Live site:** [funnelsight.dev](https://funnelsight.dev)
 
 ## The problem
 
