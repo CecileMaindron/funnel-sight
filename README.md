@@ -1,6 +1,6 @@
 # Funnelsight
 
-![Live site](https://img.shields.io/badge/live_site-funnel--sight.pages.dev-372F72)
+![Live site](https://img.shields.io/badge/live_site-funnelsight.dev-372F72)
 ![Stack](https://img.shields.io/badge/stack-n8n_%2B_Claude_API-D9A441)
 ![Status](https://img.shields.io/badge/status-fictional_company-14161F)
 
