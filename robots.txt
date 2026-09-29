@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://funnel-sight.pages.dev/sitemap.xml
+Sitemap: https://funnelsight.dev/sitemap.xml

@@ -1,6 +1,6 @@
 # Funnelsight — Content Memory
 
-This file lists every page published on funnel-sight.pages.dev. It is read by n8n on every run of the flow and injected into the prompt sent to Claude, to avoid duplicates, detect cannibalization risks, and propose relevant internal links.
+This file lists every page published on funnelsight.dev. It is read by n8n on every run of the flow and injected into the prompt sent to Claude, to avoid duplicates, detect cannibalization risks, and propose relevant internal links.
 
 Format: `slug | title (<title> tag) | page_type | target_audience | keywords | search_intent | hierarchical_position | internal_linking | status`
 
