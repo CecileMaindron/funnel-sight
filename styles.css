@@ -399,7 +399,7 @@ footer a {
 @media (max-width: 860px) {
   .hero, .trial-layout, .audience-grid, .values { grid-template-columns: 1fr; }
   .hero h1, .trial-hero h1 { font-size: 26px; max-width: none; }
-  .hero.wrap, .trial-hero.wrap, .values.wrap, .faq-section.wrap, .cta-band.wrap, .resources-hero.wrap, .article.wrap { padding-left: 40px; padding-right: 40px; }
+  .hero.wrap, .trial-hero.wrap, .values.wrap, .faq-section.wrap, .cta-band.wrap, .resources-hero.wrap, .article.wrap, .breadcrumb.wrap { padding-left: 40px; padding-right: 40px; }
   .audience .wrap { padding-left: 40px; padding-right: 40px; }
   .faq-section h2 { font-size: 26px; }
   .cta-band h2 { font-size: 26px; max-width: none; }
