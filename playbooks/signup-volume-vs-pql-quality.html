@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) + Consent Mode v2 -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied',
+    'wait_for_update': 500
+  });
+  gtag('js', new Date());
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NG2EK7DNXQ"></script>
+<script>
+  gtag('config', 'G-NG2EK7DNXQ');
+</script>
+<style>
+  /* Consent banner. Move into styles.css whenever convenient. */
+  .consent-banner {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    background: #14161F;
+    color: #FFFFFF;
+    padding: 16px;
+  }
+  .consent-banner .wrap {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+  .consent-banner p {
+    margin: 0;
+    font-size: 14px;
+    max-width: 60ch;
+  }
+  .consent-banner a { color: #FFFFFF; text-decoration: underline; }
+  .consent-actions { display: flex; gap: 8px; flex-shrink: 0; }
+  .consent-actions button {
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 4px;
+    border: 1px solid #FFFFFF;
+    cursor: pointer;
+  }
+  #consent-accept { background: #FFFFFF; color: #14161F; }
+  #consent-decline { background: transparent; color: #FFFFFF; }
+</style>
+<meta charset="UTF-8">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The hidden cost of chasing signup volume: Funnelsight</title>
+<meta name="description" content="Shrinking the signup form and lowering the PQL bar can look like easy wins. Here's what they actually cost, and when they're worth doing anyway.">
+<link rel="canonical" href="https://funnelsight.dev/playbooks/signup-volume-vs-pql-quality">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Funnelsight">
+<meta property="og:title" content="The hidden cost of chasing signup volume: Funnelsight">
+<meta property="og:description" content="Shrinking the signup form and lowering the PQL bar can look like easy wins. Here's what they actually cost, and when they're worth doing anyway.">
+<meta property="og:url" content="https://funnelsight.dev/playbooks/signup-volume-vs-pql-quality">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="The hidden cost of chasing signup volume: Funnelsight">
+<meta name="twitter:description" content="Shrinking the signup form and lowering the PQL bar can look like easy wins. Here's what they actually cost, and when they're worth doing anyway.">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+
+<div class="consent-banner" id="consent-banner">
+  <div class="wrap">
+    <p>We use Google Analytics to see which pages are useful. No ads, no data shared beyond this account. This is a demo site for a fictional company: no real visitor data is collected beyond this test.</p>
+    <div class="consent-actions">
+      <button id="consent-accept">Accept</button>
+      <button id="consent-decline">Decline</button>
+    </div>
+  </div>
+</div>
+<script>
+(function () {
+  var CONSENT_KEY = 'fs_consent';
+  var stored = localStorage.getItem(CONSENT_KEY);
+  var banner = document.getElementById('consent-banner');
+
+  function setConsent(granted) {
+    gtag('consent', 'update', {
+      'analytics_storage': granted ? 'granted' : 'denied',
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied'
+    });
+    localStorage.setItem(CONSENT_KEY, granted ? 'granted' : 'denied');
+    if (banner) banner.style.display = 'none';
+  }
+
+  if (stored === 'granted' || stored === 'denied') {
+    setConsent(stored === 'granted');
+  } else if (banner) {
+    banner.style.display = 'flex';
+  }
+
+  var acceptBtn = document.getElementById('consent-accept');
+  var declineBtn = document.getElementById('consent-decline');
+  if (acceptBtn) acceptBtn.addEventListener('click', function () { setConsent(true); });
+  if (declineBtn) declineBtn.addEventListener('click', function () { setConsent(false); });
+})();
+</script>
+<nav class="nav">
+  <div class="wrap">
+    <a href="/" class="logo">funnel<span>sight</span></a>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle-input">
+    <label for="nav-toggle" class="nav-toggle-label" aria-label="Menu">Menu</label>
+    <ul class="nav-links">
+      <li><a href="/#product">Product</a></li>
+      <li class="nav-dropdown">
+        <button type="button" class="nav-dropdown-label">Solutions</button>
+        <ul class="nav-dropdown-menu">
+          <li><a href="/solutions/marketing">For Marketing</a></li>
+          <li><a href="/solutions/sales">For Sales</a></li>
+          <li><a href="/solutions/customer-success">For Customer Success</a></li>
+        </ul>
+      </li>
+      <li><a href="/resources">Resources</a></li>
+      <li><a href="/trial">Start trial</a></li>
+    </ul>
+    <a href="/trial" class="nav-cta">Start free trial</a>
+  </div>
+</nav>
+
+<div class="demo-banner">
+  <strong>Funnelsight is a fictional company.</strong> This site was built as a training project and does not offer a real product.
+</div>
+
+<nav class="breadcrumb wrap" aria-label="Breadcrumb">
+  <a href="/">Home</a> / <a href="/resources">Resources</a> / <span class="current">The hidden cost of chasing signup volume</span>
+</nav>
+
+<article class="article wrap">
+  <h1>The hidden cost of chasing signup volume</h1>
+  <p class="lede-intro">Every growth team hits the same two moments. Someone suggests shrinking the signup form to get more leads. Someone on sales asks why a lead needs to clear a PQL bar at all when pipeline is tight. Neither move is automatically wrong, and neither one is free.</p>
+
+  <h2>Why a shorter form looks like the fix</h2>
+  <p>A longer signup form is an easy target when the number everyone is watching is total signups. Fewer fields, less friction, more people through the door. Testing that idea isn't the problem: trying a shorter form, or swapping one field for another, can genuinely move the needle, and the usual discipline applies here like anywhere else. Change one field at a time, and give it enough time to read the result, instead of cycling the form every few weeks and never knowing which change actually did anything.</p>
+  <p>The part that gets skipped is checking what a removed field was doing further down the funnel, not just at the signup step. Country and phone number are the two that come up most. Drop country and compliance rules a team relies on elsewhere can quietly stop applying correctly. Drop phone number and email becomes the only way to reach that person later, which matters the day they go quiet: a dormant or churned trial user has no reason to hand over a phone number after the fact, so if email isn't working, there's no second channel left. A shorter form that moves the signup number up while usage, activation, or PQL volume moves down hasn't fixed anything. It's moved the same problem one step further down the funnel.</p>
+
+  <h2>Why calling a signup five minutes in solves nothing</h2>
+  <p>A rep reaching out to a trial user minutes after signup is usually trying to compensate for something else: a trial that isn't quite self-serve enough, or a worry that the prospect won't get set up correctly alone. Both are legitimate reasons to get involved, if the product genuinely needs it. What's harder to justify is reaching out as a default, on every signup, regardless of whether the person has done anything yet.</p>
+  <p>If a signup needs a salesperson that early, the question isn't really about timing. It's about the trial itself. What does a self-serve trial offer over asking the prospect to book a demo? And from the rep's side, someone who signed up five minutes ago and hasn't logged in yet usually doesn't have much to talk about. There's also a simpler signal worth taking seriously: someone who picked "start a trial" over "contact us" or "request a demo" chose that path for a reason. At that stage, they weren't looking for a conversation with sales. Our page on <a href="/solutions/sales">redefining the hot lead in a self-serve motion</a> goes further into when sales should actually step in.</p>
+
+  <h2>The same fight marketing already had over the MQL bar</h2>
+  <p>Raise the PQL bar and sales complains there isn't enough volume to work with. Lower it and sales complains the leads aren't worth calling. That's not a new argument: marketing has been having some version of this fight over the MQL bar for years. The criteria behind a PQL can genuinely be too strict, or too loose, and worth revisiting on that basis. What doesn't hold up is adjusting them every time sales asks, without looking at what actually happens to conversion further down the funnel once the bar moves.</p>
+
+  <h2>Seeing the trade-off instead of guessing at it</h2>
+  <p>Funnelsight connects acquisition source, product usage, and CRM activity in one view, so a change made at one point in the funnel doesn't disappear into a blended number somewhere else. PQL scoring weighting stays visible and editable by your team rather than hidden inside a black box, so a lowered threshold shows up as a lowered threshold, not as an unexplained shift in close rate three weeks later. You can see, by segment, whether a shorter form, a changed PQL bar, or an earlier sales touch actually produced more paying customers, or just moved the same problem to a different stage. Our <a href="/glossary/what-is-a-product-qualified-lead-pql">guide to what counts as a PQL</a> covers how that scoring works in more detail.</p>
+
+  <h2>What this looks like in practice</h2>
+  <p>A growth team lowers its PQL threshold for a quarter to keep sales fed, the kind of change that's easy to justify in the moment. Looking at the segmented view instead of a single pipeline total, they see the accounts that only cleared the new, lower threshold convert at a visibly lower rate than the ones that would have cleared the original bar, while the time reps spend per PQL goes up, not down. The threshold goes back up the next quarter, this time with the team watching segment-level conversion instead of just the raw PQL count. Our <a href="/features/product-qualified-lead-scoring">PQL scoring feature</a> is built around exactly that kind of visible, adjustable rule.</p>
+
+  <div class="article-cta">
+    <p>See whether a change to your signup form or your PQL bar actually improves conversion, not just volume.</p>
+    <a href="/trial" class="btn-primary accent">Start free trial</a>
+  </div>
+
+  <div class="article-faq">
+    <details>
+      <summary>Does this mean the signup form should never change?</summary>
+      <p>No. Testing and adjusting fields can genuinely help. The point is to change one field at a time and check the effect across the whole funnel, not just the signup count.</p>
+    </details>
+    <details>
+      <summary>Should sales ever contact a trial user directly?</summary>
+      <p>Yes, when the trial genuinely isn't self-serve enough for the prospect to get there alone. It shouldn't be the default reflex every time pipeline feels tight.</p>
+    </details>
+  </div>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Does this mean the signup form should never change?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Testing and adjusting fields can genuinely help. The point is to change one field at a time and check the effect across the whole funnel, not just the signup count."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should sales ever contact a trial user directly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, when the trial genuinely isn't self-serve enough for the prospect to get there alone. It shouldn't be the default reflex every time pipeline feels tight."
+      }
+    }
+  ]
+}
+</script>
+
+</article>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-brand">
+      <span>Funnelsight, Nantes, France</span>
+      <span>© 2026</span>
+    </div>
+    <div class="footer-links">
+      <a href="https://github.com/CecileMaindron/funnelsight-site/blob/main/README.md" target="_blank" rel="noopener">Learn more about this project</a>
+      <a href="https://www.linkedin.com/in/cmaindron/" target="_blank" rel="noopener">Author</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
