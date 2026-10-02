@@ -53,6 +53,7 @@ The actual n8n canvas, for scale:
 /solutions/                 audience-specific pages (hand-authored, outside the automated flow below)
 /404.html                   error page
 /styles.css                 single site-wide stylesheet
+/fonts/                     self-hosted fonts (Inter, Space Grotesk) and their licenses
 /sitemap.xml                sitemap submitted to Google Search Console
 /content-memory.md          internal reference memory (see below)
 /token-usage-log.md         API token consumption log, one line per published page
@@ -62,9 +63,9 @@ The actual n8n canvas, for scale:
 
 Static site, plain HTML and CSS. No framework, no build step. Deployed on Cloudflare Pages.
 
-JavaScript stays minimal: a submit-prevention safeguard on the (disabled) trial form, a Google Analytics 4 tag (manual `gtag.js` install, not Google Tag Manager, since a single tag doesn't need the extra layer), and a lightweight consent banner implementing Google Consent Mode v2. Analytics storage is denied by default and only granted after an explicit visitor choice, stored in `localStorage`.
+JavaScript stays minimal: a submit-prevention safeguard on the (disabled) trial form, a Google Analytics 4 tag (manual `gtag.js` install, not Google Tag Manager, since a single tag doesn't need the extra layer), and a lightweight consent banner. Google's script only loads after a visitor explicitly accepts: until then, no request reaches Google. The choice is stored in `localStorage`, a "Cookie settings" link in the footer reopens the banner, and withdrawing consent clears the analytics cookies. Fonts are self-hosted for the same reason.
 
-Both live in `page-shell.html`, so every generated page inherits them automatically. The four core pages, `index.html`, `trial.html`, `resources.html`, `404.html`, carry the same block since they don't go through the shell.
+Both the tag and the banner live in `page-shell.html`, so every new page starts with them. Pages already published keep the version they were generated with, so any change to this block is also applied to every published page, and to the four core pages (`index.html`, `trial.html`, `resources.html`, `404.html`) that don't go through the shell.
 
 ## SEO content production
 
