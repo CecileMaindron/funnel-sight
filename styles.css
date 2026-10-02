@@ -437,3 +437,5 @@ footer a {
 .read-next-more { display: flex; flex-wrap: wrap; gap: 8px 24px; margin: 16px 0 0; padding: 0; list-style: none; }
 .read-next-more li:first-child { color: #555555; }
 .read-next-more a { color: #372F72; }
+.article .read-next-card { text-decoration: none; }
+.article .read-next-card:hover .read-next-title { text-decoration: underline; }
