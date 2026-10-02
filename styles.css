@@ -426,7 +426,6 @@ footer a {
 
 /* Read next block, end of article pages */
 .read-next { margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--line); }
-.article .read-next h2 { font-size: 20px; margin: 0 0 16px; }
 .article a.read-next-card {
   display: block; position: relative;
   padding: 20px 64px 20px 24px;
@@ -451,8 +450,6 @@ footer a {
 .read-next-label { display: block; margin-bottom: 6px; font-size: 13px; font-weight: 600; color: var(--indigo); }
 .read-next-title { display: block; margin-bottom: 6px; font-family: 'Space Grotesk', sans-serif; font-size: 19px; font-weight: 600; line-height: 1.25; color: var(--ink); }
 .read-next-desc { display: block; font-size: 15px; color: #454A5B; }
-.read-next-more { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 24px; margin-top: 16px; list-style: none; font-size: 15px; }
-.read-next-more li:first-child { color: #454A5B; }
 @media (prefers-reduced-motion: reduce) {
   .article a.read-next-card, .article a.read-next-card::after { transition: none; }
 }
