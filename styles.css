@@ -219,6 +219,16 @@ footer a {
   color: var(--indigo);
   text-decoration: underline;
 }
+/* "Cookie settings" reopens the consent banner: styled like the footer links */
+.footer-consent {
+  font: inherit;
+  color: var(--indigo);
+  text-decoration: underline;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
 
 /* ==========================================================================
    4. Homepage

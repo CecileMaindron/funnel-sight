@@ -14,7 +14,7 @@
   });
   gtag('js', new Date());
 </script>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-NG2EK7DNXQ"></script>
+
 <script>
   gtag('config', 'G-NG2EK7DNXQ');
 </script>
@@ -99,6 +99,22 @@
       'ad_personalization': 'denied'
     });
     localStorage.setItem(CONSENT_KEY, granted ? 'granted' : 'denied');
+    if (granted && !document.getElementById('ga-loader')) {
+      var s = document.createElement('script');
+      s.id = 'ga-loader';
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-NG2EK7DNXQ';
+      document.head.appendChild(s);
+    }
+    if (!granted) {
+      document.cookie.split(';').forEach(function (c) {
+        var name = c.split('=')[0].trim();
+        if (name.indexOf('_ga') === 0) {
+          document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/; domain=.funnelsight.dev';
+          document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/';
+        }
+      });
+    }
     if (banner) banner.style.display = 'none';
   }
 
@@ -112,6 +128,9 @@
   var declineBtn = document.getElementById('consent-decline');
   if (acceptBtn) acceptBtn.addEventListener('click', function () { setConsent(true); });
   if (declineBtn) declineBtn.addEventListener('click', function () { setConsent(false); });
+  document.addEventListener('click', function (e) {
+    if (e.target && e.target.id === 'consent-reopen' && banner) banner.style.display = 'flex';
+  });
 })();
 </script>
 <nav class="nav">
@@ -180,6 +199,7 @@
     <div class="footer-links">
       <a href="https://github.com/CecileMaindron/funnelsight-site/blob/main/README.md" target="_blank" rel="noopener">Learn more about this project</a>
       <a href="https://www.linkedin.com/in/cmaindron/" target="_blank" rel="noopener">Author</a>
+      <button type="button" class="footer-consent" id="consent-reopen">Cookie settings</button>
     </div>
   </div>
 </footer>
