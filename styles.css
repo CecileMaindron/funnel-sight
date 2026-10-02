@@ -1,5 +1,52 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap');
+/* ==========================================================================
+   0. Fonts, self-hosted (no request to Google servers, GDPR and sobriety).
+   Latin subset only, woff2, and only the weights the site actually uses.
+   Licence: SIL Open Font License 1.1, see /fonts/LICENSE-*.txt
+   ========================================================================== */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/inter-latin-400-normal.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/fonts/inter-latin-500-normal.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/fonts/inter-latin-600-normal.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/fonts/space-grotesk-latin-600-normal.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/space-grotesk-latin-700-normal.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
 
+/* ==========================================================================
+   1. Design tokens
+   ========================================================================== */
 :root {
   --ink: #14161F;
   --bg: #F4F5F8;
@@ -7,12 +54,18 @@
   --accent: #D9A441;
   --white: #FFFFFF;
   --line: #DDE0E8;
+  --muted: #5F6475;
 }
 
+/* ==========================================================================
+   2. Base
+   ========================================================================== */
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
-html { scroll-behavior: smooth; }
-html { scroll-padding-top: 100px; }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
 
 body {
   background: var(--bg);
@@ -36,6 +89,10 @@ h1, h2, h3 {
   letter-spacing: -0.01em;
   line-height: 1.15;
 }
+
+/* ==========================================================================
+   3. Shared components: nav, banners, breadcrumb, buttons, footer
+   ========================================================================== */
 
 /* Nav */
 .nav {
@@ -68,7 +125,7 @@ h1, h2, h3 {
 
 /* Mobile nav toggle: hidden checkbox + label, not a <details>.
    .nav-links stays completely untouched by default (the unconditional rule
-   above still applies at every width) — the checkbox/label pair is inert
+   above still applies at every width): the checkbox/label pair is inert
    until the mobile media query gives it a role. This avoids relying on any
    native browser behavior tied to <details>/[open], which proved unreliable
    across browsers. */
@@ -81,6 +138,91 @@ h1, h2, h3 {
 }
 .nav-toggle-label::after { content: '+'; margin-left: 6px; color: var(--indigo); }
 .nav-toggle-input:checked ~ .nav-toggle-label::after { content: '\2212'; }
+
+/* Solutions dropdown in nav (desktop and mobile behavior in media queries) */
+.nav-dropdown { position: relative; }
+.nav-dropdown-label {
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 500;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: inherit;
+}
+.nav-dropdown-label::after { content: ' \25BE'; font-size: 11px; }
+.nav-dropdown-menu { list-style: none; margin-top: 8px; }
+.nav-dropdown-menu a { text-decoration: none; font-size: 15px; font-weight: 500; }
+
+/* Fictional company banner */
+.demo-banner {
+  background: var(--ink);
+  color: #C9CCDA;
+  font-size: 13px;
+  text-align: center;
+  padding: 10px 16px;
+}
+.demo-banner strong { color: var(--white); }
+
+/* Breadcrumb */
+.breadcrumb { max-width: 720px; padding: 24px 0 0; font-size: 13px; color: var(--muted); }
+.breadcrumb a { color: var(--muted); text-decoration: none; }
+.breadcrumb a:hover { text-decoration: underline; }
+.breadcrumb .current { color: var(--ink); }
+
+/* Buttons */
+.btn-primary {
+  background: var(--ink);
+  color: var(--white);
+  padding: 14px 24px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+  border: none;
+  cursor: pointer;
+}
+.btn-primary.accent { background: var(--indigo); }
+.btn-ghost {
+  padding: 14px 20px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 15px;
+  border-bottom: 1px solid var(--ink);
+}
+.btn-primary:disabled {
+  background: #B9BDCC;
+  cursor: not-allowed;
+}
+
+/* Footer */
+footer {
+  border-top: 1px solid var(--line);
+  padding: 32px 0;
+  font-size: 14px;
+  color: var(--muted);
+}
+footer .wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+.footer-brand, .footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+}
+footer a {
+  color: var(--indigo);
+  text-decoration: underline;
+}
+
+/* ==========================================================================
+   4. Homepage
+   ========================================================================== */
 
 /* Hero */
 .hero {
@@ -101,25 +243,6 @@ h1, h2, h3 {
   color: #454A5B;
 }
 .hero-actions { margin-top: 32px; display: flex; gap: 14px; align-items: center; }
-.btn-primary {
-  background: var(--ink);
-  color: var(--white);
-  padding: 14px 24px;
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 15px;
-  border: none;
-  cursor: pointer;
-}
-.btn-primary.accent { background: var(--indigo); }
-.btn-ghost {
-  padding: 14px 20px;
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 15px;
-  border-bottom: 1px solid var(--ink);
-}
 
 /* Loop motif */
 .loop-motif { width: 100%; height: auto; }
@@ -133,12 +256,6 @@ h1, h2, h3 {
   gap: 40px;
 }
 .value h2 { font-size: 19px; margin-bottom: 10px; }
-
-/* Bcrumb */
-.bcrumb { padding: 24px 0 0; font-size: 13px; color: #7B8094; }
-.bcrumb a { color: #7B8094; text-decoration: none; }
-.bcrumb a:hover { text-decoration: underline; }
-.bcrumb .current { color: var(--ink); }
 .value p { font-size: 15px; color: #454A5B; }
 .value .mark {
   width: 34px; height: 34px;
@@ -147,7 +264,7 @@ h1, h2, h3 {
   margin-bottom: 18px;
 }
 
-/* Section: audience */
+/* Audience */
 .audience {
   padding: 72px 0;
   background: var(--ink);
@@ -178,31 +295,9 @@ h1, h2, h3 {
 .cta-band p { margin-top: 14px; color: #454A5B; max-width: 44ch; }
 .cta-band .hero-actions { margin-top: 28px; }
 
-/* Footer */
-footer {
-  border-top: 1px solid var(--line);
-  padding: 32px 0;
-  font-size: 14px;
-  color: #7B8094;
-}
-footer .wrap {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  gap: 12px;
-}
-.footer-brand, .footer-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px 20px;
-}
-footer a {
-  color: var(--indigo);
-  text-decoration: underline;
-}
-
-/* Trial / landing page specific */
+/* ==========================================================================
+   5. Trial page
+   ========================================================================== */
 .trial-hero {
   padding: 80px 0 56px;
   text-align: left;
@@ -232,9 +327,10 @@ footer a {
   margin-top: 7px;
   flex-shrink: 0;
 }
-.trial-proof { margin-top: 24px; font-size: 14px; color: #7B8094; }
+.trial-proof { margin-top: 24px; font-size: 14px; color: var(--muted); }
 .trial-proof a { color: var(--indigo); text-decoration: underline; }
 
+/* Trial form */
 .form-card {
   background: var(--white);
   border: 1px solid var(--line);
@@ -242,7 +338,7 @@ footer a {
   padding: 32px;
 }
 .form-card h3 { font-size: 18px; margin-bottom: 6px; }
-.form-card p.sub { font-size: 14px; color: #7B8094; margin-bottom: 24px; }
+.form-card p.sub { font-size: 14px; color: var(--muted); margin-bottom: 24px; }
 .field { margin-bottom: 16px; }
 .field label {
   display: block;
@@ -262,40 +358,13 @@ footer a {
   outline: 2px solid var(--indigo);
   outline-offset: 1px;
 }
-.form-card .btn-primary { width: 100%; margin-top: 6px; }
-.form-note { margin-top: 14px; font-size: 12px; color: #9CA0B0; }
-
-.demo-banner {
-  background: var(--ink);
-  color: #C9CCDA;
-  font-size: 13px;
-  text-align: center;
-  padding: 10px 16px;
-}
-.demo-banner strong { color: var(--white); }
-
 .field input:disabled {
   background: #F1F2F5;
   color: #9CA0B0;
   cursor: not-allowed;
 }
-.btn-primary:disabled {
-  background: #B9BDCC;
-  cursor: not-allowed;
-}
-
-/* Article pages (SEO content) */
-.article { padding: 96px 0 64px; max-width: 720px; }
-.article h1 { font-size: 40px; margin-bottom: 20px; }
-.article .lede-intro { font-size: 18px; color: #454A5B; margin-bottom: 40px; }
-.article h2 { font-size: 26px; margin: 40px 0 16px; }
-.article p { font-size: 16px; color: #2A2D3B; margin-bottom: 16px; }
-.article a:not(.btn-primary) { color: var(--indigo); text-decoration: underline; }
-.article-cta {
-  margin: 48px 0; padding: 32px;
-  background: var(--white); border: 1px solid var(--line); border-radius: 8px;
-}
-.article-faq { margin-top: 48px; border-top: 1px solid var(--line); padding-top: 32px; }
+.form-card .btn-primary { width: 100%; margin-top: 6px; }
+.form-note { margin-top: 14px; font-size: 12px; color: var(--muted); }
 
 /* Standalone FAQ block (trial page): the article layout's own 64px bottom
    padding isn't present here, so this framed variant gets its own top and
@@ -309,7 +378,88 @@ footer a {
   border-bottom: 1px solid var(--line);
 }
 
-/* Resources hub */
+/* ==========================================================================
+   6. Article pages (SEO content)
+   ========================================================================== */
+.article { padding: 96px 0 64px; max-width: 720px; }
+.article h1 { font-size: 40px; margin-bottom: 20px; }
+.article .lede-intro { font-size: 18px; color: #454A5B; margin-bottom: 40px; }
+.article h2 { font-size: 26px; margin: 40px 0 16px; }
+.article p { font-size: 16px; color: #2A2D3B; margin-bottom: 16px; }
+.article a:not(.btn-primary) { color: var(--indigo); text-decoration: underline; }
+.article-cta {
+  margin: 48px 0; padding: 32px;
+  background: var(--white); border: 1px solid var(--line); border-radius: 8px;
+}
+
+/* Article FAQ: same accordion pattern as the resources hub */
+.article-faq { margin-top: 48px; border-top: 1px solid var(--line); padding-top: 32px; }
+.article-faq details { border-bottom: 1px solid var(--line); }
+.article-faq summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 8px;
+  margin: 0 -8px;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: background 0.1s ease;
+}
+.article-faq summary:hover { background: var(--line); }
+.article-faq summary:focus-visible { outline: 2px solid var(--indigo); outline-offset: 2px; }
+.article-faq summary::-webkit-details-marker { display: none; }
+.article-faq summary::marker { content: ''; }
+.article-faq summary::after {
+  content: '+'; content: '+' / '';
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1;
+  color: var(--indigo);
+  flex-shrink: 0;
+}
+.article-faq details[open] summary::after { content: '\2212'; content: '\2212' / ''; }
+.article-faq details p { margin: 0; padding: 0 0 16px; color: #454A5B; }
+
+/* Read next card, end of article pages.
+   Must stay after ".article a:not(.btn-primary)": both selectors have the
+   same specificity, so the later one wins and the card stays un-underlined. */
+.read-next { margin-top: 48px; }
+.article a.read-next-card {
+  display: block;
+  position: relative;
+  padding: 20px 64px 20px 24px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--accent);
+  border-radius: 8px;
+  color: inherit;
+  text-decoration: none;
+  transition: border-color 0.15s ease;
+}
+.article a.read-next-card::after {
+  content: "→"; content: "→" / "";
+  position: absolute;
+  right: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--indigo);
+  font-size: 22px;
+  transition: transform 0.15s ease;
+}
+.article a.read-next-card:hover { border-color: var(--indigo); border-left-color: var(--accent); }
+.article a.read-next-card:hover::after { transform: translate(4px, -50%); }
+.article a.read-next-card:hover .read-next-title { text-decoration: underline; }
+.article a.read-next-card:focus-visible { outline: 2px solid var(--indigo); outline-offset: 2px; }
+.read-next-label { display: block; margin-bottom: 6px; font-size: 13px; font-weight: 600; color: var(--indigo); }
+.read-next-title { display: block; margin-bottom: 6px; font-family: 'Space Grotesk', sans-serif; font-size: 19px; font-weight: 600; line-height: 1.25; color: var(--ink); }
+.read-next-desc { display: block; font-size: 15px; color: #454A5B; }
+
+/* ==========================================================================
+   7. Resources hub
+   ========================================================================== */
 .resources-hero { padding: 96px 0 48px; }
 .resources-hero h1 { font-size: 40px; margin-bottom: 16px; }
 .resources-hero p { font-size: 18px; color: #454A5B; max-width: 60ch; }
@@ -357,22 +507,9 @@ footer a {
 .resource-card h3 { font-size: 19px; margin-bottom: 8px; }
 .resource-card p { font-size: 15px; color: #454A5B; }
 
-/* Solutions dropdown in nav (replaces the old "Who it's for" anchor) */
-.nav-dropdown { position: relative; }
-.nav-dropdown-label {
-  font-family: inherit;
-  font-size: 15px;
-  font-weight: 500;
-  background: none;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-  color: inherit;
-}
-.nav-dropdown-label::after { content: ' \25BE'; font-size: 11px; }
-.nav-dropdown-menu { list-style: none; margin-top: 8px; }
-.nav-dropdown-menu a { text-decoration: none; font-size: 15px; font-weight: 500; }
-
+/* ==========================================================================
+   8. Media queries (kept last so they override the rules above)
+   ========================================================================== */
 @media (min-width: 861px) {
   .nav-dropdown-menu {
     display: none;
@@ -424,32 +561,8 @@ footer a {
   .nav-dropdown-menu li { padding: 4px 0; }
 }
 
-/* Read next block, end of article pages */
-.read-next { margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--line); }
-.article a.read-next-card {
-  display: block; position: relative;
-  padding: 20px 64px 20px 24px;
-  background: var(--white);
-  border: 1px solid var(--line);
-  border-left: 4px solid var(--accent);
-  border-radius: 8px;
-  color: inherit; text-decoration: none;
-  transition: border-color 0.15s ease;
-}
-.article a.read-next-card::after {
-  content: "→"; content: "→" / "";
-  position: absolute; right: 24px; top: 50%;
-  transform: translateY(-50%);
-  color: var(--indigo); font-size: 22px;
-  transition: transform 0.15s ease;
-}
-.article a.read-next-card:hover { border-color: var(--indigo); border-left-color: var(--accent); }
-.article a.read-next-card:hover::after { transform: translate(4px, -50%); }
-.article a.read-next-card:hover .read-next-title { text-decoration: underline; }
-.article a.read-next-card:focus-visible { outline: 2px solid var(--indigo); outline-offset: 2px; }
-.read-next-label { display: block; margin-bottom: 6px; font-size: 13px; font-weight: 600; color: var(--indigo); }
-.read-next-title { display: block; margin-bottom: 6px; font-family: 'Space Grotesk', sans-serif; font-size: 19px; font-weight: 600; line-height: 1.25; color: var(--ink); }
-.read-next-desc { display: block; font-size: 15px; color: #454A5B; }
 @media (prefers-reduced-motion: reduce) {
-  .article a.read-next-card, .article a.read-next-card::after { transition: none; }
+  .article a.read-next-card,
+  .article a.read-next-card::after,
+  .article-faq summary { transition: none; }
 }
