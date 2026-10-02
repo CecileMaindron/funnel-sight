@@ -32,11 +32,11 @@ Each entry covers one choice: what I decided, what I considered instead, and wha
 
 **Context:** A static site generator, or a JS framework, would have given me templating and component reuse.
 
-**Why I kept it simple:** The automation writes HTML directly into the repo through a GitHub PR. Adding a build step means one more thing that can break between "Claude wrote a page" and "the page is live," in a chain that already has several moving parts. Every generated page inherits its shared header, footer and scripts from one file, `page-shell.html`, which covers the component-reuse problem without needing a framework to enforce it.
+**Why I kept it simple:** The automation writes HTML directly into the repo through a GitHub PR. Adding a build step means one more thing that can break between "Claude wrote a page" and "the page is live," in a chain that already has several moving parts. Every generated page starts from one file, `page-shell.html`, which holds the shared header, footer and scripts, so a new page never has to rebuild them.
 
-**Trade-off:** The four core pages that don't go through the shell (`index.html`, `trial.html`, `resources.html`, `404.html`) carry their own copy of that shared block. If it changes, I update it in five places by hand.
+**Trade-off:** A page inherits the shell at the moment it's generated, not afterward. Once published, it's a standalone copy, and so are the four core pages that never go through the shell (`index.html`, `trial.html`, `resources.html`, `404.html`). Any later change to the shared block has to be applied to every published page as well as to the shell. In practice that's a grouped search-and-replace across all pages, checked by match count before anything is replaced. I learned this the hard way: after adding a menu entry, 21 older pages kept the old navigation until I caught it.
 
-**What would change my mind:** If the site grew into hundreds of pages with more shared components than a single shell file could reasonably hold, a static site generator would start paying for its own complexity.
+**What would change my mind:** If the site grew into hundreds of pages, or if changes to the shared block became frequent enough that keeping every copy in sync turned into routine work, a static site generator or a build step that injects the shell would start paying for its own complexity.
 
 ## Why the pipeline stops instead of retrying on a truncated response
 
@@ -89,3 +89,15 @@ Each entry covers one choice: what I decided, what I considered instead, and wha
 **Trade-off:** If the batch grows large enough that the time between the first and last call exceeds 5 minutes, the later calls in that batch would miss the cache and pay the full write cost again, the exact cost the caching was meant to avoid.
 
 **What would change my mind:** If the keyword volume per run grows past what a 5-minute window reliably covers, switch to the 1-hour cache option — a one-line change, not a redesign.
+
+## Why analytics only loads after consent, and fonts are self-hosted
+
+**Decision:** Google Analytics' script only loads once a visitor clicks Accept, and fonts are served from the site itself instead of Google Fonts.
+
+**Context:** The site already used Google Consent Mode v2, with analytics storage denied by default. Checking the browser's network tab showed what that meant in practice: Google's script still loaded for every visitor, and cookieless requests still went out to Google before any choice was made. Fonts were also loaded from Google's servers on every page view, which shares each visitor's IP address with Google, again without consent.
+
+**Why I changed it:** The consent banner tells visitors nothing is collected without their choice. Consent Mode's advanced setup is accepted by Google, but its GDPR footing is debated in Europe, and a German court ruled against loading Google Fonts remotely in 2022. The basic setup removes the question entirely: no request reaches Google until someone accepts. It's also lighter. Visitors who don't accept never download a 180 KB script, and self-hosting dropped one font weight the site never used. A "Cookie settings" link in the footer lets visitors withdraw consent at any time, which also clears the analytics cookies.
+
+**Trade-off:** Visitors who decline become invisible to Google Analytics, and Google can no longer model them statistically. At this site's traffic level that modeling never kicked in anyway, so nothing visible was lost. Search Console, which covers search traffic, doesn't depend on the banner at all.
+
+**What would change my mind:** If I needed reliable traffic volumes that include visitors who decline, I'd add a cookieless analytics tool rather than go back to loading Google's script before consent.
